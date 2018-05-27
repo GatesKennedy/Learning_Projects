@@ -40,7 +40,11 @@
         <div class="ButtonContainer">
             <asp:Button ID="Button1" runat="server" BackColor="#111111" BorderColor="#555555" Text="How Much Love?" OnClick="Button1_Click" BorderStyle="Solid" CssClass="ButtonClass"/>
             <br />
-            <asp:Label ID="WaysToSay" runat="server" Visible="False"></asp:Label>
+            
+        </div>
+
+        <div>
+            <asp:Label ID="WaysToSay" runat="server" Visible="False" CssClass="waysLabel"></asp:Label>
         </div>
      
         <div class="LabelContainer">

@@ -52,6 +52,9 @@ body {
     border-right-width: 1px;
 }
 
+.waysLabel {
+    font-size: smaller;
+}
 
 .LabelContainer {
     font-size: larger;
