@@ -5,33 +5,18 @@
     src: url('~/App_Data/Fonts/brutal-tooth.ttf') format('truetype');
 }
 
+@import "compass/css3";
+
+@keyframes fadeIn {
+    from {
+        opacity: .2;
+    }
+}
+
 body {
-    background-color: #090909;
-    color: #f8f8f8;
+    background-color: #111;
+    color: #bbb;
+    font-family: Helvetica, Arial, sans-serif;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.header {
-    font-size: larger;
-    padding: 20px;
-    margin-top: 20px;
-    font-family: 'brutal-tooth';
-}
-
-.picContainer {
-    padding: 10px;
-}
-
-.ButtonContainer {
-    margin: 10px;
-    padding: 10px;
-    color: #f9f9f9;
-}
-
-#Button1 {
-    font-size: 17px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #f9f9f9;
-    font-style: italic;
+    animation: fadeIn 2.5s infinite alternate;
 }

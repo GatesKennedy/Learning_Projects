@@ -7,26 +7,22 @@
     <title>HappyBirthdayBridgerBallbach</title>
     <link rel="stylesheet" href="stylesheet1.css" type="text/css" />
     <style>
-        body {
-            background-color: #090909;
-            color: #f8f8f8;
-            text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .header {
-            font-size: larger;
-            padding: 20px;
-            margin-top: 20px;
-            font-family: 'brutal-tooth';
-        }
-
+        
         .picContainer {
             padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .header {
+            font-size: larger;
+            padding-bottom: 10px;
+            margin: 0px;
+            text-align: center;
         }
 
         .ButtonContainer {
-            margin: 10px;
+            text-align: center;
             padding: 10px;
             color: #f9f9f9;
         }
@@ -36,22 +32,44 @@
             font-family: Arial, Helvetica, sans-serif;
             color: #f9f9f9;
             font-style: italic;
+            text-shadow: -1px 2px 5px #555555;
+            border-bottom-width:2px;
+            border-left-width:2px;
+            border-top-width: 1px;
+            border-right-width: 1px;
         }
+
+
+        .LabelContainer {
+            font-size: larger;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 6px;
+            margin-left: 22%;
+            margin-right: 22%;
+            border-bottom: 2px solid #555555;
+            border-left: 1.2px solid #555555;
+        }
+        
 
     </style>
 </head>
 <body>
+
+
     <form id="form1" runat="server">
 
-        <div class="header">
-            Happy Birthday <br /> Bridger Baby<br />
-            5/25/18<br />
+        <div class="picContainer">
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/Hair_ForWeb.jpg" />
         </div>
 
-        <div class="picContainer">
-            <asp:Image ID="PicRock" runat="server" ImageUrl="~/App_Data/Rock1.jpg" Visible="False" />
-            <br />
-            <asp:Button ID="Button1" runat="server" BackColor="#FF6666" BorderColor="#990033" Text="How Much Do We Love You?" OnClick="Button1_Click" />
+        <div class="header">
+            .:5/25/18:.
+        </div>
+
+        <div class="ButtonContainer">
+            <asp:Button ID="Button1" runat="server" BackColor="#111111" BorderColor="#555555" Text="How Much Love?" OnClick="Button1_Click" BorderStyle="Solid" CssClass="ButtonClass"/>
         </div>
      
         <div class="LabelContainer">

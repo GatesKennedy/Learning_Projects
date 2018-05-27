@@ -1,0 +1,21 @@
+﻿
+
+@font-face {
+    font-family: 'brutal-tooth';
+    src: url('~/App_Data/Fonts/brutal-tooth.ttf') format('truetype');
+}
+
+@import "compass/css3";
+
+@keyframes fadeIn {
+    from {
+        opacity: .2;
+    }
+}
+
+body {
+    background-color: #111;
+    color: #bbb;
+    font-family: Helvetica, Arial, sans-serif;
+    animation: fadeIn 2.5s infinite alternate;
+}
