@@ -68,7 +68,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\Bridger and Conor - BW.jpeg" />
+    <Content Include="Images\BridgerBaby - BW.jpg" />
+    <Content Include="Images\BridgerBabyGrowingUpCats - BW.jpg" />
     <Content Include="Images\Hair_ForWeb.jpg" />
+    <Content Include="Images\HBD_Golf.JPG" />
     <Content Include="Images\PhotoBooth.jpeg" />
     <Content Include="Images\PiggyBack.jpg" />
     <Content Include="Images\GrowingUp.jpg" />
@@ -80,6 +84,7 @@
     <Content Include="Images\tumblr_lpjcm2LjHh1qdqv28o1_500.jpg" />
     <Content Include="BridgerBaby.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\JavaScript.js" />
     <Content Include="StyleSheet1.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -99,6 +104,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Fonts\XXII Ultimate-Black-Metal.ttf" />
+    <Content Include="Fonts\brutal-tooth.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />

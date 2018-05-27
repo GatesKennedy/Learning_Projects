@@ -6,57 +6,26 @@
 <head runat="server">
     <title>HappyBirthdayBridgerBallbach</title>
     <link rel="stylesheet" href="stylesheet1.css" type="text/css" />
-    <style>
-        
-        .picContainer {
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .header {
-            font-size: larger;
-            padding-bottom: 10px;
-            margin: 0px;
-            text-align: center;
-        }
 
-        .ButtonContainer {
-            text-align: center;
-            padding: 10px;
-            color: #f9f9f9;
-        }
+    <script src="~/Scripts/JavaScript.js" lang="javascript" type="text/javascript"></script>
 
-        #Button1 {
-            font-size: 17px;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #f9f9f9;
-            font-style: italic;
-            text-shadow: -1px 2px 5px #555555;
-            border-bottom-width:2px;
-            border-left-width:2px;
-            border-top-width: 1px;
-            border-right-width: 1px;
-        }
-
-
-        .LabelContainer {
-            font-size: larger;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 6px;
-            margin-left: 22%;
-            margin-right: 22%;
-            border-bottom: 2px solid #555555;
-            border-left: 1.2px solid #555555;
-        }
-        
-
-    </style>
 </head>
 <body>
 
+        <!-- Trigger/Open The Modal 
+    <button id="myBtn">Open Modal</button>
+    -->
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+      </div>
+
+    </div>
 
     <form id="form1" runat="server">
 
@@ -70,6 +39,8 @@
 
         <div class="ButtonContainer">
             <asp:Button ID="Button1" runat="server" BackColor="#111111" BorderColor="#555555" Text="How Much Love?" OnClick="Button1_Click" BorderStyle="Solid" CssClass="ButtonClass"/>
+            <br />
+            <asp:Label ID="WaysToSay" runat="server" Visible="False"></asp:Label>
         </div>
      
         <div class="LabelContainer">

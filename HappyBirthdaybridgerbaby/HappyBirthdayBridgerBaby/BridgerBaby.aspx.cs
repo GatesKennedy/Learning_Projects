@@ -13,9 +13,11 @@ namespace HappyBirthdayBridgerBaby
         {
             if (!Page.IsPostBack) {
                 skate = false;
+
             }
             else{
                 Button1.Text = "More Love?";
+                ScriptManager.RegisterStartupScript(this.Page, Page.GetType(), "text", "openModal()", true);
             };
         }
 
@@ -28,6 +30,7 @@ namespace HappyBirthdayBridgerBaby
 
         bool skate;
 
+        
         private static Random _rando = new Random();
 
         List<string> madValues = new List<string>();
@@ -105,6 +108,9 @@ namespace HappyBirthdayBridgerBaby
             "Bridger's Friend"
         };
 
+        
+
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             /*
@@ -115,7 +121,11 @@ namespace HappyBirthdayBridgerBaby
             }
             else DisplayPicture.ImageUrl = "/App_Data/Skate2.jpg";
             */
-            
+            int waysToSay = traits.Count * action1.Count * valuableThing.Count * action2.Count * timeVal.Count * ending.Count;
+
+            WaysToSay.Text = string.Format("({0} ways to say it...)", waysToSay.ToString());
+            WaysToSay.Visible = true;
+
             madValues.Clear();
 
             int rando1 = _rando.Next(0, 6);
