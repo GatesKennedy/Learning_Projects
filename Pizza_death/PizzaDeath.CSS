@@ -1,0 +1,440 @@
+
+
+/*=========================
+	Meta Style
+===========================*/
+
+@font-face {
+    font-family: 'MoonFlowerBold'; /*a name to be used later*/
+    src: url('./moon_flower/MoonFlowerBold.ttf'); /*URL to font*/
+}
+@font-face {
+    font-family: 'MoonFlowerReg'; /*a name to be used later*/
+    src: url('./moon_flower/MoonFlowerReg.ttf'); /*URL to font*/
+}
+/*=========================
+	STRUCTURE
+===========================*/
+
+* {
+    box-sizing: border-box;
+}
+
+/*
+[class*="col-"] {
+    float: left;
+}
+*/
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #292929;
+}
+
+h1 {
+	padding: 0px;
+	margin:0px;
+}
+
+h2 {
+	padding: 0px;
+	margin: 0px;
+}
+
+h3 {
+	padding: 0px;
+	margin: 0px;
+}
+
+h4 {
+	padding: 0px;
+	margin: 0px;
+}
+
+.header {
+	text-align: center;
+	display: block;
+	padding: 4vh 0vh 1.5vh;
+	z-index: 1;
+	background-color: #292929;
+}
+
+.menu {
+	float: left;
+	padding:15px;
+}
+
+.menu.aside {
+	display: block;
+	width:30%;
+	max-width: 320px;
+	text-align: center;
+	background-color: #292929;
+}
+
+.order.display {
+	min-height: 400px;
+}
+
+.order {
+	display: block;
+}
+
+.order.cont {
+	height:100%;
+	padding:7px;
+}
+
+.status {
+	display: inline-block;
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+
+
+.status.scale,.status.crust,.status.sauce,.status.cheese,.status.plants,.status.protein {
+	padding:0px;
+	margin:0px;
+}
+
+.list { 
+	float:left;
+}
+
+.value {
+	margin-left: 4px
+}
+
+.list.money {
+	float: right;
+}
+
+.menu.choices {
+	display: block;
+	width:70%;
+	overflow: scroll;
+	padding-left: 2%;
+}
+
+.choice {
+	display:block;
+	padding:20px;
+}
+.choice.cont1, .choice.cont2 {
+	overflow:auto;
+}
+
+.form {
+	display:block;
+	padding:0px 15px;
+}
+
+.list::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.list.value {
+	max-width: 16ch;
+}
+
+.orderButton {
+	padding: 15px 0px;
+}
+/*=========================
+	Text Styles
+===========================*/
+
+body {
+	font-family: MoonFlowerReg, helvetica, sans-serif, verdana;
+	font-size: 20px;
+	color: #666;
+}
+
+p {
+	margin:0px;
+	padding:0px 0px 0px 5px;
+}
+
+h1 {
+	font-family: MoonFlowerBold, helvetica;
+	font-size: 70px;
+	color: #ccc;
+	text-shadow: 0px 2px 3px #000;
+}
+
+h2 {
+	font-family: MoonFlowerReg, helvetica;
+	font-size: 30px;
+}
+
+h3 {
+	font-family: MoonFlowerBold;
+	font-size: 37px;
+	color: #808080;
+}
+
+h4 {
+	font-family: MoonFlowerBold;
+	font-size: 30px;
+}
+
+form {
+	font-family: MoonFlowerReg;
+	font-size: 28px;
+}
+
+.header {
+	border-bottom: inset;
+	border-color: #303030;
+}
+
+.menu.aside {
+	font-family: MoonFlowerReg;
+	font-size: 32px;
+}
+
+.list {
+	font-size: 26px;
+	color:#9d9d9d;
+	font-family: MoonFlowerBold;
+}
+
+.list.value {
+	text-align: left;
+}
+
+.list.value,.list.money {
+	font-family: MoonFlowerReg;
+	color:#8c8c8c;
+}
+
+.footer {
+	display:inline-block;
+	width:100%;
+	float:none;
+	font-family: MoonFlowerReg;
+	color: #ccc;
+	font-size: 15px;
+	text-align: center;
+}
+/*=========================
+	Menu Land
+===========================*/
+
+/*================STRUCTURE===================*/
+
+.topping1 {
+	min-width: 5%;
+	float: left;
+	
+}
+
+.topping2 {
+	max-width: 40%;
+	float: left;
+	
+}
+
+/*======================FORMS==========================*/
+
+.form {
+	position: relative;
+	padding:5px 20px 20px 0px;
+}
+
+.check {
+	width:100%;
+}
+
+.mark {
+	font-family: MoonFlowerBold;
+	color:#292929;
+}
+
+/* Hide the browser's default radio button*/
+.check input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.check:hover {
+	color:#ccc;
+}
+.check:hover input ~ .mark{
+	color: #fff;
+}
+
+.check input:checked ~ .mark {
+	color:#a6a6a6;
+	content:".:.";
+}
+
+.mark:after {
+	content:".:.";
+	color: #8c8c8c;
+	position: absolute;
+	display: none;
+}
+
+
+/*=========================
+	Order Land
+===========================*/
+
+.order.display {
+	background-color: #303030;
+	border-color: #808080;
+	border-width: 1px;
+	border-radius: 7px;
+}
+
+
+.total {
+	margin:7px;
+	text-align: left;
+	font-size: 28px
+}
+
+/*=========================
+	Order Button
+===========================*/
+
+.button1 {
+	font-family: MoonFlowerBold;
+	font-size: 33px;
+	color: #ccc;
+
+	background-color: #333;
+	border-color: #808080;
+	border-width: 1px;
+	padding:7px;
+	border-radius: 7px;
+
+	z-index: 1;
+}
+
+.button1:hover {
+	font-size: 34px;
+	color: #292929;
+
+	background-color: #808080;
+	border-color: #f0f0f0;
+	border-width: 1px;
+	padding:4px -2px 4px -2px;
+}
+
+/*=========================
+	Order Confirm
+===========================*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #4d4d4d; /* Fallback color */
+    background-color: #212121; /* Black w/ opacity */
+    background-image: url("./assets/Rare_Early_Photos_of_Elvis_Presley.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Modal Style */
+.modal-content {
+	position: fixed;
+	left:20px;
+    background-color: #383838;
+    font-family: MoonFlowerBold;
+    color: #d3d3d3;
+    margin-top: 21vh;
+    margin-left: 2vw;
+    padding: 20px;
+    max-width: 400px;
+    border: 1px solid #888;
+
+}
+
+
+#orderConfirm {
+
+	padding:0px;
+}
+
+.close {
+	background-color: #313131;
+	border: 1px solid #888;
+	padding:5px;
+	margin-left: 0px;
+}
+
+/* The Close Button */
+.confirm.button {
+	position: relative;
+	top:40px;
+    color: #666;
+    float: right;
+    font-family: MoonFlowerReg;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.confirm.button:hover,
+.confirm.button:focus {
+    color: #292929;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #292929;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/*=========================
+	Goat Image
+===========================*/
+
+#imageGoat {
+	max-width: 40%;
+	max-height: 66%;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+}
+
+/*=========================
+	Footer
+===========================*/
+
+
+
+
+
+/*======================BORDERS==========================
+body, .header, .footer, .order {
+	border: 1px solid white;
+}
+.menuHead, .orderButton, .menu, .top.cont1, .top.cont2,
+.topping1, .topping2, .toppingHead, .toppingFlag {	
+	border: 1px solid red;
+}
+
+.menu.aside, .menu.choices, {
+	border: 2px solid blue;
+}
+
+*/
