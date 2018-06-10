@@ -1,0 +1,207 @@
+
+
+/*=========================
+	Meta Style
+===========================*/
+
+@font-face {
+    font-family: 'MoonFlowerBold'; /*a name to be used later*/
+    src: url('./moon_flower/MoonFlowerBold.ttf'); /*URL to font*/
+}
+@font-face {
+    font-family: 'MoonFlowerReg'; /*a name to be used later*/
+    src: url('./moon_flower/MoonFlowerReg.ttf'); /*URL to font*/
+}
+/*=========================
+	STRUCTURE
+===========================*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #292929;
+}
+
+h1 {
+	padding: 0px;
+	margin:0px;
+}
+
+.header {
+	text-align: center;
+	display: block;
+	padding: 4vh 0vh 1.5vh;
+	z-index: 1;
+	background-color: #292929;
+}
+
+.menu {
+	float: left;
+	padding:15px;
+}
+
+.menu.aside {
+	display: block;
+	width:30%;
+	max-width: 320px;
+	text-align: center;
+	background-color: #292929;
+}
+
+.order.display {
+	min-height: 400px;
+}
+
+/*=========================
+	Text Styles
+===========================*/
+
+body {
+	font-family: MoonFlowerReg, helvetica, sans-serif, verdana;
+	font-size: 20px;
+	color: #666;
+}
+
+p {
+	margin:0px;
+	padding:0px 0px 0px 5px;
+}
+
+h1 {
+	font-family: MoonFlowerBold, helvetica;
+	font-size: 70px;
+	color: #ccc;
+	text-shadow: 0px 2px 3px #000;
+}
+
+h2 {
+	font-family: MoonFlowerReg, helvetica;
+	font-size: 30px;
+}
+
+
+/*=========================
+	Menu Land
+===========================*/
+
+/*================STRUCTURE===================*/
+
+
+
+/*======================FORMS==========================*/
+
+
+
+/*=========================
+	Order Land
+===========================*/
+
+
+/*=========================
+	Order Button
+===========================*/
+
+
+
+/*=========================
+	Order Confirm
+===========================*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #4d4d4d; /* Fallback color */
+    background-color: #212121; /* Black w/ opacity */
+    background-image: url("./assets/Rare_Early_Photos_of_Elvis_Presley.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Modal Style */
+.modal-content {
+	position: fixed;
+	left:20px;
+    background-color: #383838;
+    font-family: MoonFlowerBold;
+    color: #d3d3d3;
+    margin-top: 21vh;
+    margin-left: 2vw;
+    padding: 20px;
+    max-width: 400px;
+    border: 1px solid #888;
+
+}
+
+
+/* The Close Button */
+.confirm.button {
+	position: relative;
+	top:40px;
+    color: #666;
+    float: right;
+    font-family: MoonFlowerReg;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.confirm.button:hover,
+.confirm.button:focus {
+    color: #292929;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #292929;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/*=========================
+	Goat Image
+===========================*/
+
+#imageGoat {
+	max-width: 40%;
+	max-height: 66%;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+}
+
+/*=========================
+	Footer
+===========================*/
+
+
+
+
+
+/*======================BORDERS==========================
+body, .header, .footer, .order {
+	border: 1px solid white;
+}
+.menuHead, .orderButton, .menu, .top.cont1, .top.cont2,
+.topping1, .topping2, .toppingHead, .toppingFlag {	
+	border: 1px solid red;
+}
+
+.menu.aside, .menu.choices, {
+	border: 2px solid blue;
+}
+
+*/
