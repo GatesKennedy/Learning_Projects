@@ -16,13 +16,20 @@
 	STRUCTURE
 ===========================*/
 
-* {
-    box-sizing: border-box;
+nav {
+	text-align: center;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+ul li {
+	display: inline;
+	text-align: left;
 }
 
 body {
-	margin: 0px;
-	padding: 0px;
+	margin: 0px 13px 13px 13px;
+	padding: 0px 21px 21px 21px;
 	background-color: #292929;
 }
 
@@ -32,28 +39,62 @@ h1 {
 }
 
 .header {
-	text-align: center;
-	display: block;
-	padding: 4vh 0vh 1.5vh;
+	text-align: left;
 	z-index: 1;
 	background-color: #292929;
+	
 }
 
-.menu {
-	float: left;
-	padding:15px;
+#introduction {
+	margin-left: 21px;
 }
 
-.menu.aside {
+#info {
+	margin-left: 21px;
+}
+
+#calculator {
+	background-color: #333;	
+}
+
+.cont-calc {
+	display: inline-flex;
+	padding-left: :7px;
+
+}
+
+
+.cont-calc-sub1 {
 	display: block;
-	width:30%;
-	max-width: 320px;
-	text-align: center;
-	background-color: #292929;
+	background-color: #232323;
+	padding: 7px;
+	margin: 7px;
 }
 
-.order.display {
-	min-height: 400px;
+.cont-calc-sub2 {
+	display: block;
+	position: relative;
+	right: 0px;
+
+}
+
+.input-element {
+	display: inline;
+	column-width: 80px;
+	min-width: 80px;
+}
+
+aside ul li {
+	display: block;
+	text-align: right;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 7px;
 }
 
 /*=========================
@@ -62,26 +103,35 @@ h1 {
 
 body {
 	font-family: MoonFlowerReg, helvetica, sans-serif, verdana;
-	font-size: 20px;
-	color: #666;
+	font-size: 23px;
+	color: #999;
 }
 
-p {
-	margin:0px;
-	padding:0px 0px 0px 5px;
+p, dd {
+	font-size: 18px;
+	text-align: left;
 }
 
 h1 {
-	font-family: MoonFlowerBold, helvetica;
 	font-size: 70px;
 	color: #ccc;
 	text-shadow: 0px 2px 3px #000;
 }
 
 h2 {
-	font-family: MoonFlowerReg, helvetica;
-	font-size: 30px;
+	font-size: 14px;
+	color: #a8141e;
 }
+
+footer {
+	font-size: 18px;
+	text-align: center;
+}
+
+dt {
+	color: #ccc;
+}
+
 
 
 /*=========================

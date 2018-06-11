@@ -11,18 +11,18 @@
 		<meta name="Still White Mare" Content="Black Wintered Stallion">
 		<meta name="GatesKennedy" Content="GoodStuff">
 		<title>
-			GatesKennedy Title
+			GatesKennedy
 		</title>
-	<!--
+	
+		<!--
 		________________________
 		 CSS: Linked StyleSheet 
-		========================
+		========================						-->
 
 		<link rel="stylesheet"
 		type="text/CSS" 
-		href="[STYLE_SHEET_ADDRESS]"/>					 
-	-->
-														<!--	CSS: LINKED 	-->
+		href="FrustumStyle.CSS"/>					 
+														<!--	CSS: LINKED -->
 	<!-- 
 		__________________________
 		 CSS: In-Document Styling 
@@ -35,11 +35,11 @@
 	<!--
 		____________________________
 		 JavaScript: Linked Styling
-		============================
+		============================					-->
 	
-		<script src="JS_LINK_ADDRESS">					// 		JS: LINKED
+		<script src="FrustumCalc.JS">					// 		JS: LINKED
 		</script>			
-	-->
+
 	<!--
 		_________________________________
 		 JavaScript: In-Document Styling 
@@ -56,22 +56,101 @@
 ==============================
 -->
 	<body>
+		<nav>
+			<ul>
+				<li>Home</li>
+				<li>Projects</li>
+				<li>Tools</li>
+			</ul>
+		</nav>
 
-		<h1>Frustum Calculator for Fabricators</h1>
-		<div id="introduction" class="header">
-			<p>This application will help you create a tapered conical section of any dimension. Specify the desired diameter at each end of the part and the sheet metal patern will be generated for your convenience.</p>
-		</div>
+		<header>
+			<h1>Frustum Calculator</h1>
+			<div id="introduction" class="header">
+				<p>This application will help you create a tapered conical section of any dimension. </br> Specify the desired diameter at each end of the part and the sheet metal patern will be generated for your convenience.</p>
+				<article id="info" class="header">
+					<dl>
+						<dt>Frustum Definition:</dt>
+						<dd>The portion of a cone or pyramid that remains after its upper section has been cut off by a plane parallel to its base, or that is intercepted between two such planes.(Sometimes mispelled "frustrum".)</dd>
+						<dt>Frustum Math:</dt>
+						<dd>[content]</dd>
+					</dl>
+				</article>
+			</div>
+		</header>
 
-		
-		<div id="input" class="cont1">
-				Div (container1)</br>
-				Input Section.
-		</div>
+		<section id="calculator" class="cont-calc">
 
-		<div id="output" class="cont1">
-				Div (container1)</br>
-				Output Section.
-		</div>
-		
+			<div id="input-cont" class="cont-calc-sub1">
+
+				<div id="input-form1" class="cont-calc-sub2">
+					<div class="input-element">
+						Smaller Diameter:
+					</div>
+					<div class="input-element">
+						<input type="text" name="InputDiameter1"></br>
+						<h2 id="InputDiameter1"></h2>
+					</div>
+				</div>
+
+				<div id="input-form2" class="cont-calc-sub2">
+					<div class="input-element">
+						Larger Diameter:
+					</div>
+					<div class="input-element">
+						<input type="text" name="InputDiameter2"></br>
+						<h2 id="InputDiameter2"></h2>
+					</div>
+				</div>
+
+				<div id="input-form3" class="cont-calc-sub2">
+					<div class="input-element">
+						Distance to Span:
+					</div>
+					<div class="input-element">
+						<input type="text" name="InputLateral"></br>
+						<h2 id="InputLateral"></h2>
+					</div>
+				</div>
+
+			</div>
+
+
+			<div id="output-cont" class="cont-calc-sub1">
+
+				<div id="output-form1" class="cont-calc-sub2">
+					<div class="input-element">
+						Smaller Radius:
+					</div>
+					<div class="input-element">
+						<input type="text" name="OutputRadius1"></br>
+					</div>
+				</div>
+
+				<div id="output-form2" class="cont-calc-sub2">
+					<div class="input-element">
+						Larger Radius:
+					</div>
+					<div class="input-element">
+						<input type="text" name="OutputRadius2"></br>
+					</div>
+				</div>
+
+				<div id="output-form3" class="cont-calc-sub2">
+					<div class="input-element">
+						Arc Angle:
+					</div>
+					<div class="input-element">
+						<input type="text" name="OutputAngle"></br>
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		<footer>
+			GatesKennedy .:. Portland, OR .:. Conor@EscCollective.com
+		</footer>
+
 	</body>
 </html>
