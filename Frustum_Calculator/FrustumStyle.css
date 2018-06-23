@@ -53,35 +53,42 @@ h1 {
 	margin-left: 21px;
 }
 
+/*____ CALCULATOR ____*/
+
 #calculator {
 	background-color: #333;	
 }
 
 .cont-calc {
 	display: inline-flex;
-	padding-left: :7px;
-
+	padding-left: 7px;
 }
 
 
+#input-cont {
+	display: inline-block;
+}
+
 .cont-calc-sub1 {
-	display: block;
+
 	background-color: #232323;
 	padding: 7px;
 	margin: 7px;
 }
 
 .cont-calc-sub2 {
-	display: block;
+	display: inline-block;
 	position: relative;
 	right: 0px;
-
+}
+.cont-calc-sub3 {
+	height: 13px;
+	margin: 5px;
 }
 
-.input-element {
-	display: inline;
-	column-width: 80px;
-	min-width: 80px;
+#input-cont-col1 #input-cont-col2 {
+display: block;
+
 }
 
 aside ul li {
