@@ -4,14 +4,17 @@
 	Meta Style
 ===========================*/
 
+/*
 @font-face {
-    font-family: 'MoonFlowerBold'; /*a name to be used later*/
-    src: url('./moon_flower/MoonFlowerBold.ttf'); /*URL to font*/
+    font-family: 'MoonFlowerBold'; 
+    src: url('./moon_flower/MoonFlowerBold.ttf'); 
 }
 @font-face {
-    font-family: 'MoonFlowerReg'; /*a name to be used later*/
-    src: url('./moon_flower/MoonFlowerReg.ttf'); /*URL to font*/
+    font-family: 'MoonFlowerReg'; 
+    src: url('./moon_flower/MoonFlowerReg.ttf'); 
 }
+*/
+
 /*=========================
 	STRUCTURE
 ===========================*/
@@ -21,81 +24,44 @@ nav {
 	padding-left: 7px;
 	padding-right: 7px;
 }
-
-ul li {
-	display: inline;
-	text-align: left;
-}
-
 body {
 	margin: 0px 13px 13px 13px;
 	padding: 0px 21px 21px 21px;
 	background-color: #292929;
 }
-
 h1 {
 	padding: 0px;
 	margin:0px;
 }
-
 .header {
 	text-align: left;
 	z-index: 1;
 	background-color: #292929;
-	
 }
-
 #introduction {
 	margin-left: 21px;
 }
-
 #info {
 	margin-left: 21px;
 }
 
-/*____ CALCULATOR ____*/
-
-#calculator {
-	background-color: #333;	
-}
-
+/*____CALC____*/
 .cont-calc {
+	background-color: #333;
 	display: inline-flex;
 	padding-left: 7px;
 }
-
-
-#input-cont {
-	display: inline-block;
-}
-
 .cont-calc-sub1 {
-
 	background-color: #232323;
 	padding: 7px;
 	margin: 7px;
 }
-
 .cont-calc-sub2 {
 	display: inline-block;
-	position: relative;
-	right: 0px;
-}
-.cont-calc-sub3 {
-	height: 13px;
-	margin: 5px;
+	height: 100%;
 }
 
-#input-cont-col1 #input-cont-col2 {
-display: block;
-
-}
-
-aside ul li {
-	display: block;
-	text-align: right;
-}
-
+/*___FOOTER___*/
 footer {
 	position: fixed;
 	bottom: 0;
@@ -105,52 +71,49 @@ footer {
 }
 
 /*=========================
+	SUB-STRUCTURE
+===========================*/
+ul li {
+	display: inline;
+	text-align: left;
+}
+
+/*=========================
+	Body Styles
+===========================*/
+
+/*=========================
 	Text Styles
 ===========================*/
 
 body {
-	font-family: MoonFlowerReg, helvetica, sans-serif, verdana;
+	font-family: helvetica, sans-serif, verdana;
 	font-size: 23px;
 	color: #999;
 }
-
 p, dd {
 	font-size: 18px;
 	text-align: left;
 }
-
 h1 {
 	font-size: 70px;
 	color: #ccc;
 	text-shadow: 0px 2px 3px #000;
 }
-
 h2 {
-	font-size: 14px;
-	color: #a8141e;
+	font-size: 3px;
 }
-
 footer {
 	font-size: 18px;
 	text-align: center;
 }
-
 dt {
 	color: #ccc;
 }
 
-
-
 /*=========================
 	Menu Land
 ===========================*/
-
-/*================STRUCTURE===================*/
-
-
-
-/*======================FORMS==========================*/
-
 
 
 /*=========================
@@ -161,7 +124,6 @@ dt {
 /*=========================
 	Order Button
 ===========================*/
-
 
 
 /*=========================
@@ -197,9 +159,7 @@ dt {
     padding: 20px;
     max-width: 400px;
     border: 1px solid #888;
-
 }
-
 
 /* The Close Button */
 .confirm.button {
@@ -226,39 +186,6 @@ dt {
     cursor: pointer;
 }
 
-
-/*=========================
-	Goat Image
-===========================*/
-
-#imageGoat {
-	max-width: 40%;
-	max-height: 66%;
-	position: fixed;
-	right: 0;
-	bottom: 0;
-	z-index: -1;
-}
-
 /*=========================
 	Footer
 ===========================*/
-
-
-
-
-
-/*======================BORDERS==========================
-body, .header, .footer, .order {
-	border: 1px solid white;
-}
-.menuHead, .orderButton, .menu, .top.cont1, .top.cont2,
-.topping1, .topping2, .toppingHead, .toppingFlag {	
-	border: 1px solid red;
-}
-
-.menu.aside, .menu.choices, {
-	border: 2px solid blue;
-}
-
-*/
