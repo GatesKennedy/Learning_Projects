@@ -45,6 +45,7 @@ h1 {
 	margin-left: 21px;
 }
 
+
 /*____CALC____*/
 .cont-calc {
 	background-color: #333;
@@ -59,6 +60,17 @@ h1 {
 .cont-calc-sub2 {
 	display: inline-block;
 	height: 100%;
+	margin: auto;
+}
+#input-cont-inFlag {
+	width: 3vw;
+	height: 90%;
+}
+.cont-inFlag {
+	background-color: #b21e1e;
+	border: #444;
+	border-radius: 0.25vw;
+	border-width: 4px;
 }
 
 /*___FOOTER___*/
@@ -129,25 +141,25 @@ dt {
 /*=========================
 	Order Confirm
 ===========================*/
-
+/*
 .modal {
     display: none;
     position: fixed;
     z-index: 1; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: #4d4d4d; /* Fallback color */
-    background-color: #212121; /* Black w/ opacity */
+    width: 100%; /* Full width
+    height: 100%; /* Full height 
+    overflow: auto; /* Enable scroll if needed 
+    background-color: #4d4d4d; /* Fallback color 
+    background-color: #212121; /* Black w/ opacity 
     background-image: url("./assets/Rare_Early_Photos_of_Elvis_Presley.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
 }
 
-/* Modal Style */
+/* Modal Style
 .modal-content {
 	position: fixed;
 	left:20px;
@@ -161,7 +173,7 @@ dt {
     border: 1px solid #888;
 }
 
-/* The Close Button */
+/* The Close Button 
 .confirm.button {
 	position: relative;
 	top:40px;
