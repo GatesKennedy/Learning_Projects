@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+
+<!--==========================
+|||||||	Head Section |||||||||
+===========================-->
+
+	<head>
+		<meta charset = "UTF-8">
+		<meta name="GatesKennedy" Content="Still White Mare">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--_CSS_StyleSheet_Linked-->
+		<link rel="stylesheet" href="PizzaDeath.css" type="text/CSS">
+	<!--_JavaScript_Styleing_Linked
+ 		<script src="PizzaDeath.js"></script> -->
+ 	<!--_Page_Title_-->
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<title>
+			.:Order.Death:.
+		</title>
+	</head>
+
+<!--==========================
+|||||||	Body Section |||||||||
+===========================-->
+
+	<body onload="statusLoad()">
+<!--==========================
+...	Header ...................
+===========================-->
+	
+		<div class="header">
+			<h1>.pizza .:. death.</h1>
+			<h2>Pray for it..</h2>
+		</div>
+
+<!--==========================
+...	Menu .....................
+===========================-->
+
+		<div class="flexbox">
+
+<!--=== Aside =============-->
+		
+			<div class="menu aside">
+
+				<div class="menuHead">
+					.:order choices:.
+				</div>
+
+				<div class="order display">
+					<h2>||</h2>
+
+					<div class="order cont" id="orderContainer">
+
+						<div class="status scale">
+							<div class="list item">Scale:</div>
+							<div class="list value" 	id="scale"></div>
+							<div class="list money" 	id="scaleCost" title="0">+$10</div>
+						</div>
+
+						<div class="status crust">
+							<div class="list item">Crust:</div>
+							<div class="list value" 	id="crust"></div>
+							<div class="list money" 	id="crustCost" title="0"></div>
+						</div>
+
+						<div class="status sauce">
+							<div class="list item">Sauce:</div>
+							<div class="list value" 	id="sauce"></div>
+							<div class="list money" 	id="sauceCost" title="0"></div>
+						</div>
+
+						<div class="status cheese">
+							<div class="list item">Cheese:</div>			
+							<div class="list value" 	id="cheese"></div>
+							<div class="list money" 	id="cheeseCost" title="0"></div>
+						</div>
+
+						<div class="status plants">
+							<div class="list item">Plants:</div>
+							<div class="list value" 	id="plants"></div>
+							<div class="list money" 	id="plantsCost" title="0"></div>
+						</div>
+
+						<div class="status protein">
+							<div class="list item">Protein:</div>					
+							<div class="list value" 	id="protein"></div>
+							<div class="list money" 	id="proteinCost" title="0"></div>	
+						</div>
+
+					</div>
+				</div>
+
+				<div id="orderTotal" class="order total">
+					Order Total: 
+				</div>
+
+				<div class="order button">
+						<button id="orderButton" class="button button1" name="placeOrder">.;Place Order;.</button>
+				</div>
+			</div>
+
+<!--=== Container1 ========-->
+
+			<div class="menu choices">
+
+				<div class="choice cont1">
+
+					<div class="topping1">
+						<h3>scale</h3>
+						<h4>.   :   .</h4>
+						<div class="form">
+							<form>
+								<label class="check">
+									<input type="radio" name="scale"
+									onchange="radioChecked(this.value, this.name)"
+									value="small"> small
+
+									<label class="mark">.:.</label> <br>
+			  					</label>	
+								<label class="check">
+								  	<input type="radio" name="scale"
+								  	onchange="radioChecked(this.value, this.name)"
+								  	value="medium" checked> medium
+								  	<label class="mark">.:.</label> <br>
+			  					</label>	
+								<label class="check">
+								  	<input type="radio" name="scale"
+								  	onchange="radioChecked(this.value, this.name)"
+								  	value="large"> large
+								  	<label class="mark">.:.</label> <br>
+			  					</label>	
+								<label class="check">
+								  	<input type="radio" name="scale"
+								  	onchange="radioChecked(this.value, this.name)"
+								  	value="xlarge"> xlarge
+								  	<label class="mark">.:.</label> <br>
+			  					</label>	
+							</form>
+						</div>
+					</div>
+
+					<div class="topping1">
+						<h3>crust</h3>
+						<h4>.   :   .</h4>
+						<div class="form">
+							<form>
+								<label class="check">
+									<input type="radio" name="crust"
+									onchange="radioChecked(this.value, this.name)"
+									value="plain" checked> plain
+									<label class="mark">.:.</label> <br>
+			  					</label>	
+								<label class="check">
+								  	<input type="radio" name="crust"
+								  	onchange="radioChecked(this.value, this.name)"
+								  	value="garlic"> garlic
+								  	<label class="mark">.:.</label> <br>
+			  					</label>	
+								<label class="check">
+								  	<input type="radio" name="crust"
+								  	onchange="radioChecked(this.value, this.name)"
+								  	value="stuffed"> stuffed
+								  	<label class="mark">.:.</label> <br>
+			  					</label>	
+								<label class="check">
+								  	<input type="radio" name="crust"
+								  	onchange="radioChecked(this.value, this.name)"
+								  	value="special"> special
+								  	<label class="mark">.:.</label> <br>
+			  					</label>	
+							</form>
+						</div>
+					</div>
+			
+					<div class="topping1">
+						<h3>sauce</h3>
+						<h4>.   :   .</h4>
+						<div class="form">
+							<form>
+								<label class="check">
+									<input type="radio" name="sauce" 
+									onchange="radioChecked(this.value, this.name)"
+									value="marinara" checked> red
+									<label class="mark">.:.</label> <br>
+			  					</label>	
+								<label class="check">
+								  	<input type="radio" name="sauce" 
+								  	onchange="radioChecked(this.value, this.name)"
+								  	value="white sauce"> white
+								  	<label class="mark">.:.</label> <br>
+			  					</label>	
+								<label class="check">
+								  	<input type="radio" name="sauce" 
+								  	onchange="radioChecked(this.value, this.name)"
+								  	value="BBQ sauce"> barb
+								  	<label class="mark">.:.</label> <br>
+			  					</label>	
+								<label class="check">
+								  	<input type="radio" name="sauce" 
+								  	onchange="radioChecked(this.value, this.name)"
+								  	value="no sauce"> none
+								  	<label class="mark">.:.</label> <br>
+			  					</label>	
+							</form>
+						</div>
+					</div>
+
+					<div class="topping1">
+						<h3>cheese</h3>
+						<h4>.   :   .</h4>
+						<div class="form">
+							<form>
+								<label class="check">
+									<input type="radio" name="cheese"
+									onchange="radioChecked(this.value, this.name)"
+									value="Mozzarella" checked> cow
+									<label class="mark">.:.</label> <br>
+			  					</label>	
+								<label class="check">
+							  		<input type="radio" name="cheese"
+							  		onchange="radioChecked(this.value, this.name)"
+							  		value="goat"> goat
+							  		<label class="mark">.:.</label> <br>
+			  					</label>	
+							  	<label class="check">
+							  		<input type="radio" name="cheese"
+							  		onchange="radioChecked(this.value, this.name)"
+							  		value="No cheese"> none
+							  		<label class="mark">.:.</label> <br>
+			  					</label>	
+							</form>
+						</div>
+					</div>
+				</div>
+
+<!--=== Container2 ========-->
+
+				<div class="choice cont2">
+					
+					<div class="topping2">
+						<div class="toppingHead">
+							<h3>plants</h3>
+						</div>
+
+						<div class.="toppingFlag">
+							<h4>   =:=   </h4>
+						</div>
+
+						<div class="form">
+							<form>
+								<label class="check">
+			  						<input type="checkbox" name="plants" id="artichoke"
+			  						onchange="boxChecked(this.value,this.name,this.id)"
+			  						value="artichoke heart"> artichoke.heart
+			  						<label class="mark">=:=</label> <br>
+			  					</label>	
+								<label class="check">
+			  						<input type="checkbox" name="plants" id="garlic"
+			  						onchange="boxChecked(this.value,this.name,this.id)"
+			  						value="roasted garlic"> garlic.roasted
+			  						<label class="mark">=:=</label> <br>
+			  					</label>	
+								<label class="check">
+			  						<input type="checkbox" name="plants" id="olives"
+			  						onchange="boxChecked(this.value,this.name,this.id)"
+			  						value="black olives"> olive.black
+			  						<label class="mark">=:=</label> <br>
+			  					</label>	
+								<label class="check">
+			  						<input type="checkbox" name="plants" id="mushroom"
+			  						onchange="boxChecked(this.value,this.name,this.id)"
+			  						value="sauteed mushroom"> mushroom.sauteed
+			  						<label class="mark">=:=</label> <br>
+			  					</label>	
+								<label class="check">
+			  						<input type="checkbox" name="plants" id="tomatoes"
+			  						onchange="boxChecked(this.value,this.name,this.id)"
+			  						value="sun dried tomatoes"> tomatoe.dried
+			  						<label class="mark">=:=</label> <br>
+			  					</label>	
+								<label class="check">
+			  						<input type="checkbox" name="plants" id="redPepper"
+			  						onchange="boxChecked(this.value,this.name,this.id)"
+			  						value="red peppers"> pepper.red
+			  						<label class="mark">=:=</label> <br>
+			  					</label>	
+								<label class="check">
+			  						<input type="checkbox" name="plants" id="ghostPepper"
+			  						onchange="boxChecked(this.value,this.name,this.id)"
+			  						value="ghost peppers"> pepper.ghost
+			  						<label class="mark">=:=</label> <br>
+			  					</label>	
+								<label class="check">
+			  						<input type="checkbox" name="plants" id="basil"
+			  						onchange="boxChecked(this.value,this.name,this.id)"
+			  						value="fresh basil"> basil.fresh
+			  						<label class="mark">=:=</label> <br>
+			  					</label>	
+								<label class="check">
+			  						<input type="checkbox" name="plants" id="pineapple"
+			  						onchange="boxChecked(this.value,this.name,this.id)"
+			  						value="pineapple"> pineapple.fresh
+			  						<label class="mark">=:=</label> <br>
+			  					</label>	
+							</form>
+						</div>
+					</div>
+
+					<div class="topping2">
+						<h3>protein</h3>
+						<h4>.   :   .</h4>
+						<div class="form">
+							<form>
+								<label class="check">
+			  						<input type="checkbox" name="protein" 
+			  						onchange="boxChecked(this.value,this.name)"
+			  						value="seitan"> seitan
+			  						<label class="mark">.:.</label> <br>
+			  					</label>	
+			  					<label class="check">
+			  						<input type="checkbox" name="protein" 
+			  						onchange="boxChecked(this.value,this.name)"
+			  						value="tempeh"> tempeh
+			  						<label class="mark">.:.</label> <br>
+			  					</label>		
+								<label class="check">
+			  						<input type="checkbox" name="protein" 
+			  						onchange="boxChecked(this.value,this.name)"
+			  						value="tofu"> tofu
+			  						<label class="mark">.:.</label> <br>
+			  					</label>		
+								<label class="check">
+			  						<input type="checkbox" name="protein" 
+			  						onchange="boxChecked(this.value,this.name)"
+			  						value="jack fruit"> jackfruit
+			  						<label class="mark">.:.</label> <br>
+			  					</label>		
+								<label class="check">
+			  						<input type="checkbox" name="protein" 
+			  						onchange="boxChecked(this.value,this.name)"
+			  						value="field roast"> field roast
+			  						<label class="mark">.:.</label> <br>
+								</label>		
+
+							</form>
+						</div>
+					</div>
+
+					
+
+				</div>
+
+			</div>
+		</div>
+
+
+
+
+<!--=========================
+...	Goat ....................
+==========================-->
+
+		<img id="imageGoat" src="./assets/PizzaGoat2.png"/>
+
+<!--=========================
+...	Footer ..................
+==========================-->
+
+	<div class="footer">
+		.: 323-483-9382 '|' pizzadeath.com '|' @deadseriouspizza '|' 5231 SE Clayton st. Portland, OR 97215:.
+	</div>
+
+<!--=========================
+...	Confirm Screen ..........
+==========================-->
+
+<!-- The Modal -->
+<div id="orderConfirm" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">[X]</span>
+    <div class="finalize">
+	    <div>
+	    		<p id="finalContent"><br><br>Thank You! <br> One last thing..<br> Please Confirm your order below.<br><br></p>
+	    </div>
+	</div>
+    <button class="confirm button" name="confirm">.;Confirm;.</button>
+    
+
+  </div>
+<!--=========================
+...	JavaScript ..............
+==========================-->
+	
+		<script src="PizzaDeath.js"></script>
+
+
+	<!--
+		<script>
+
+			function statusLoad() {
+				document.getElementById("scale").innerHTML = "scale";
+				document.getElementById("crust").innerHTML = "crust";
+				document.getElementById("sauce").innerHTML = "sauce";
+			}
+		</script>
+	-->
+
+	</body>
+</html>
