@@ -12,7 +12,7 @@ namespace HappyBirthdayBridgerBaby
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack) {
-                skate = false;
+                
 
             }
             else{

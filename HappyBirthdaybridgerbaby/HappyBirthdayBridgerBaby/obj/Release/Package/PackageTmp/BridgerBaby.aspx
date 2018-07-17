@@ -6,60 +6,27 @@
 <head runat="server">
     <title>HappyBirthdayBridgerBallbach</title>
     <link rel="stylesheet" href="stylesheet1.css" type="text/css" />
-    <style>
-        body {
-            background-color: #090909;
-            color: #f8f8f8;
-            text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        
-        .picContainer {
-            padding: 10px;
-        }
-        
-        .header {
-            font-size: larger;
-            padding-bottom: 10px;
-            margin: 0px;
-        }
 
-        .ButtonContainer {
-            text-align: center;
-            padding: 10px;
-            color: #f9f9f9;
-        }
+    <script src="~/Scripts/JavaScript.js" lang="javascript" type="text/javascript"></script>
 
-        #Button1 {
-            font-size: 17px;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #f9f9f9;
-            font-style: italic;
-        }
-
-        .LabelContainer {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding-left: 25%;
-            padding-right: 25%;
-            
-        }
-        
-        @import "compass/css3";
-        @keyframes fadeIn {
-            from {opacity: .2; }
-        }
-        body {
-            background-color: #111;
-            color: #bbb;
-            font-family: Helvetica, Arial, sans-serif;
-            animation: fadeIn 2.5s infinite alternate;
-        }
-
-    </style>
 </head>
 <body>
+
+        <!-- Trigger/Open The Modal 
+    <button id="myBtn">Open Modal</button>
+    -->
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+      </div>
+
+    </div>
+
     <form id="form1" runat="server">
 
         <div class="picContainer">
@@ -67,12 +34,17 @@
         </div>
 
         <div class="header">
-            Happy Birthday <br />
             .:5/25/18:.
         </div>
 
         <div class="ButtonContainer">
-            <asp:Button ID="Button1" runat="server" BackColor="#FF6666" BorderColor="#990033" Text="How Much Love?" OnClick="Button1_Click" BorderStyle="None" CssClass="ButtonClass" />
+            <asp:Button ID="Button1" runat="server" BackColor="#111111" BorderColor="#555555" Text="How Much Love?" OnClick="Button1_Click" BorderStyle="Solid" CssClass="ButtonClass"/>
+            <br />
+            
+        </div>
+
+        <div>
+            <asp:Label ID="WaysToSay" runat="server" Visible="False" CssClass="waysLabel"></asp:Label>
         </div>
      
         <div class="LabelContainer">
