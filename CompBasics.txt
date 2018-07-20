@@ -710,18 +710,27 @@ QUIZ:
 
 Digital: Of, or related to, a circuit or device that represents magnitudes in digits. Computers are digital devices; data in computers is represented using digits.
 The opposite of “digital” is “analog." Analog refers to data flowing out in a continuous stream.
+
 Digital things can only be in one of the available states for that thing, and not “in between” two of the available states. For example, a light bulb with a regular flip switch would be digital because it has only two states: totally off or totally on. If the light bulb had one of those round dimmer switches instead of a flip switch and it could be set to anywhere between “totally off” and “totally on," it would not be digital. If it had four positions - off, low, medium and high - and it couldn’t be in between those positions at all, that would also be digital.
+
 EXAMPLE: As familiar examples, methods of recording pictures, music and video have all shifted from analog to digital in the last 40 years. 
+
 1. <Template-blank & Note>
 
 
 ADDITIONAL DATA ON THE DEFINITION OF DIGITAL
+
 Photography film is a smooth, continuous preparation of chemicals applied to a piece of clear plastic. Whatever light is allowed to hit the film creates an image on the film. The film isn’t divided up into many small squares like a computer screen. The quality of the image depends on the quality of the chemical preparation.
+
 In a digital camera, light is allowed to hit the “sensor”. The sensor has lots of individual locations, and each location registers a certain brightness and color of light. That information has to be somehow translated into digits (actual numbers) that the computer can store. The quality of the image then depends on how many of those locations the sensor has, and how well each location can produce a number that accurately represents the light that landed on it.
 While digital cameras were available for purchase as early as 1990, film cameras had superior image quality into the early 2000’s. Once the digital cameras were good enough, the shift to digital wasn’t really because the pictures were better, it was because digital is cheaper and easier to work with. Taking digital pictures costs nothing, whereas film is not free and cannot be reused. Of course digital image quality continues to improve to this day and in most every application is now superior to film.
+
 Another example of the difference between digital and analog comes from music. 
+
 Music consists of waves of pressure moving through the air. Your ears “feel” these pressures and you hear them as sounds.  You can actually feel big waves (loud volume, in other words) of lower pitch, like a bass guitar or bass drum, as the pressure pushes and pulls on your chest. If you are standing next to a drumset and someone kicks the kick drum, of course there is no force in nature “chopping that sound up into numbers” like a computer. It’s just a motion of air back and forth which then moves your eardrums. The sound itself is analog. It is natural and continuous. 
+
 Recording music, then, is somehow capturing those constantly changing waves and then re-creating those same waves again later.  
+
 The continuous groove in a record is actually the shape of this wave cut into the vinyl material. You can actually place any little pin, held in your fingers, on a spinning record and you will hear the song faintly. Tape that pin to a cone of paper, and you’ll hear it clearly! The pin is not a magical microcomputer; it’s just a stick of metal. There is no system here that deals with numbers - the groove in the record is just a direct, mechanical impression of the sound. The sound that comes from this is an analogy of the physical form of the groove in the record, just as the groove is an analogy of the actual sound that was being created by a band when the record was being recorded.
   
 
@@ -731,6 +740,7 @@ The continuous groove in a record is actually the shape of this wave cut into th
 
 1. <Template-blank & Reveal card>
 ADDITIONAL DATA ON THE DEFINITION OF DIGITAL
+
 Cassette tapes were also purely analog - when they were first sold in 1962, the tape itself had a layer that could be magnetized. The varying wave of sound was translated into a varying wave of magnetism laid down on the tape. But since the tape would always have some stray magnetism on it, this would be picked up as “hiss” and could not be avoided. 
   
 
@@ -746,11 +756,17 @@ Like still pictures and music, eventually all the data on a video tape could be 
 
 
 ADDITIONAL DATA ON THE DEFINITION OF DIGITAL
+
 That gives you some idea of analog and digital in our consumer media world, but let’s get back to the topic at hand: computing.
+
 There’s very little “computing” that can be done in an analog fashion - outside of the human mind. If you are deciding whether you want a ham and cheese sandwich or a peanut butter and jelly sandwich at home, you might mentally weight the taste, health impacts and cost of each in some sort of “sliding scale” continuous fashion. That’s an analog thought process, and it’s very simple and rapid. You most likely would NOT assign number values (digits) to each sandwich in each category and determine a scoring plan with a point total for each - but if you DID, this would be a digital approach to solving this snack time dilemma! 
+
 As you will learn in much more detail in this course, digital computers actually only work with 2 digits: 0 and 1. This is because our digital technology - all the little circuits and devices - are just looking for electricity being either “on” or “off”. Compared to the house light switches we talked about above, our computers only work on the “on and off” switches. There aren’t any analog “circular dial” switches or even digital “Off/Low/Medium/High” switches in a computer. Any time it seems like there are - such as the sound volume of your computer or brightness adjustment on your screen - adjustment be made up only of on and off switches. What’s actually happening is that the volume or brightness are being changed from one level to another, in tiny increments - it just sounds like it’s a smooth change. If you really get that idea, you’ve got your first foot on the path to success with computers. 
+
 There are thoughts of someday having analog computers which think more like we do, but given the limitations of our current technology, digital is our only option. Of course, it works very well and is cheaply available. There’s very little you can’t do with a modern digital computer! But understanding this method of digital “thinking” is really the most important fundamental building block of understanding how computers work and how computer programs are written. 
+
 EXAMPLE: In terms of physical universe objects, a staircase would be considered digital and a ramp would not be digital. Stairs have distinct, separated steps. A ramp is continuous.
+
 Note: People typically use the word digital to refer to anything that has to do with computers.
 
 
@@ -1056,7 +1072,9 @@ EXAMPLE: Kids sometimes watch movies on tablets while riding in a car.
 1. 
 
 Virtual: The main English definition of the word “virtual” is hundreds of years old, and means “nearly as described, but not according to strict definition”. For instance, let’s say you got a secret spy message on paper and you were told to read it, then remove it from existence. So, you burned the piece of paper, put the ashes in muffin mix, cooked the muffins and fed the muffins to your dog. You have virtually removed the original piece of paper from existence. A scientist would say the original paper still exists in altered form so it’s not “removed from existence accord to strict definition”, but it’s pretty clear that no one could read it at this point. 
+
 Virtual is used to describe something that seems to exist in the physical world, but instead is generated by a computer.
+
 EXAMPLE: If you a helmet that you put on that shows an image to each eye and blocks all other vision, and changes what you see as you move your head, this is called “virtual reality”. If you look down and it shows your feet on the ledge of a skyscraper, and the image quality is good, you might experience a real fear of heights! So it feels like reality, but of course you are not really on the ledge of a skyscraper, nor in danger.
 
 
