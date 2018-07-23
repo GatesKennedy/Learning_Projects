@@ -215,6 +215,7 @@
     <Compile Include="Models\TabField.cs" />
     <Compile Include="Models\TestAnswer.cs" />
     <Compile Include="Models\TestQuestion.cs" />
+    <Compile Include="Parse_Pop_App.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
