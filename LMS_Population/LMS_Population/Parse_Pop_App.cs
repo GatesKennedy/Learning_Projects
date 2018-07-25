@@ -22,11 +22,12 @@ namespace LMS_Population
         //      Main Method
         //=======================
 
-        private void PopulateInputTxt()
+        public void PopulateInputTxt()
         {
             Read();
             Sort(linesList);
-            //Write();
+            Write();
+
             Display();
         }
 
@@ -38,12 +39,12 @@ namespace LMS_Population
         List<string> linesList = new List<string>();
         List<List<string>> pageList = new List<List<string>>();
         List<List<StringBuilder>> compiledPages = new List<List<StringBuilder>>();
+        List<List<StringBuilder>> sortedPages = new List<List<StringBuilder>>();
+
 
         List<string> typeList = new List<string>();
         List<string> fieldsList = new List<string>();
 
-        int messageID = 1;
-        int fieldID = 0;
         int pageCount = 1;
         int pageCount2 = 1;
 
@@ -107,148 +108,249 @@ namespace LMS_Population
 
         public void Sort(List<string> lines)
         {
-            SeparatePages();
-            CompileFields();
-            IdentifyProperties();
+            SortSeparatePages();
+            SortCompileFields();
+            SortCleanUp();
         }
 
-        //===================================
-        //  SubSort: Separate 'linesList' into Pages
-        //===================================
+            //===========================================
+            //  SubSort: Separate 'linesList' into Pages
+            //  Add 'pageFields' to 'pageList'
+            //===========================================
 
-        public void SeparatePages()
-        {
-            List<string> pageFields = new List<string>();
-            // Separate Pages
-            for (int j = 0; j < linesList.Count; j++)
+            public void SortSeparatePages()
             {
-                //  No Page Flag Detected
-                if (!linesList.ElementAt(j).Contains("$$$"))
+                List<string> pageFields = new List<string>();
+                // Separate Pages
+                for (int j = 0; j < linesList.Count; j++)
                 {
-                    pageFields.Add(linesList.ElementAt(j));
+                    //  No Page Flag Detected
+                    if (!linesList.ElementAt(j).Contains("$$$"))
+                    {
+                        pageFields.Add(linesList.ElementAt(j));
+                    }
+                    // Page Flag Detected
+                    else if (linesList.ElementAt(j).Contains("$$$"))
+                    {
+                        //  Add Collected 'pageFields'
+                        pageList.Add(pageFields);
+                        //  Reset 'pageFields' Collection
+                        pageFields = new List<string>();
+                        //  Increment Page Count
+                        pageCount2++;
+                        pageFields.Add("Page Number: " + pageCount2);
+                        pageFields.Add("#");
+                    }
                 }
-                // Page Flag Detected
-                else if (linesList.ElementAt(j).Contains("$$$"))
+                // Count Pages
+                pageCount = pageList.Count();
+            }
+
+            //=================================================
+            //  SubSort: Compile Fields of 'pageList' Elements
+            //  Add 'compiledFields' to 'compiledPages'
+            //=================================================
+
+            public void SortCompileFields()
+            {
+                //  Local Variables
+                int fieldNumber = -1;
+                int pageNumber = 0;
+                StringBuilder newField = new StringBuilder();
+                List<StringBuilder> compiledFields = new List<StringBuilder>();
+                //List<StringBuilder> cleanFields = new List<StringBuilder>();
+
+                // Loop Through Pages
+                foreach (var page in pageList)
                 {
-                    //  Add Collected 'pageFields'
-                    pageList.Add(pageFields);
-                    //  Reset 'pageFields' Collection
-                    pageFields = new List<string>();
-                    //  Increment Page Count
-                    pageCount2++;
-                    pageFields.Add("Page Number: " + pageCount2);
-                    pageFields.Add("#");
+                    //  Loop Through Fields of 'page'
+                    for (int i = 0; i < page.Count(); i++)
+                    {
+                        //  New Field Detected
+                        if (page.ElementAt(i) == "#")
+                        {
+                            newField = new StringBuilder();
+                            fieldNumber++;
+                        }
+                        //  New Field Detected
+                        else if (page.ElementAt(i) != "#" && page.ElementAt(i) == page.First())
+                        {
+                            newField = new StringBuilder();
+                            compiledFields.Add(newField.Append(page.ElementAt(i)));
+                            fieldNumber++;
+                        }
+                        //  Start Field
+                        else if (page.ElementAt(i) != "#" && page.ElementAt(i - 1) == "#")
+                        {
+                            compiledFields.Add(newField.Append(page.ElementAt(i)));
+                        }
+                        //  Cont. Field Detected
+                        else if (page.ElementAt(i) != "#" && page.ElementAt(i - 1) != "#" && !page.ElementAt(i).StartsWith("*"))
+                        {
+                            compiledFields.LastOrDefault().Append(" " + page.ElementAt(i));
+                        }
+                        //  Cont. Field Detected
+                        else if (page.ElementAt(i) != "#" && page.ElementAt(i).StartsWith("*"))
+                        {
+                            newField = new StringBuilder();
+                            compiledFields.Add(newField.Append(page.ElementAt(i)));
+                            fieldNumber++;
+                        }
+                    }
+                    //  Clean Empty Fields/Pages
+                    if (compiledFields.Count > 1)
+                    {
+                        pageNumber++;
+                        StringBuilder pageNumElement = new StringBuilder();
+                        pageNumElement.Append("Page Number: " + pageNumber.ToString());
+                        compiledFields[0] = pageNumElement;
+                        compiledPages.Add(compiledFields);
+                    }
+
+                    //  Reset Local Variables
+                    compiledFields = new List<StringBuilder>();
+                    newField = new StringBuilder();
+                    fieldNumber = -1;
                 }
             }
-            // Count Pages
-            pageCount = pageList.Count();
-        }
 
-        //=========================================
-        //  SubSort: Compile Fields of 'pageList' Elements
-        //=========================================
+            //=======================================================
+            //  SubSort: Clean Up Sort (empty pages, fields, etc..)
+            //=======================================================
 
-        public void CompileFields()
-        {
-            //  Local Variables
-            int fieldNumber = -1;
-            StringBuilder newField = new StringBuilder();
-            List<StringBuilder> compiledFields = new List<StringBuilder>();
-
-            // Loop Through Pages
-            foreach (var page in pageList)
+        public void SortCleanUp()
             {
-                //  Loop Through Fields of 'page'
-                for (int i = 0; i < page.Count(); i++)
+                foreach (var page in compiledPages)
                 {
-                    // New Field Detected
-                    if (page.ElementAt(i) == "#")
+                    if (page.Count > 0)
                     {
-                        newField = new StringBuilder();
-                        fieldNumber++;
-                    }
-                    else if (page.ElementAt(i) != "#" && page.ElementAt(i) == page.First())
-                    {
-                        newField = new StringBuilder();
-                        compiledFields.Add(newField.Append(page.ElementAt(i)));
-                        fieldNumber++;
-                    }
-                    // Start Field
-                    else if (page.ElementAt(i) != "#" && page.ElementAt(i - 1) == "#")
-                    {
-                        compiledFields.Add(newField.Append(page.ElementAt(i)));
-                    }
-                    // Cont. Field Detected
-                    else if (page.ElementAt(i) != "#" && page.ElementAt(i - 1) != "#" && !page.ElementAt(i).StartsWith("*"))
-                    {
-                        compiledFields.LastOrDefault().Append(" " + page.ElementAt(i));
-                    }
-                    else if (page.ElementAt(i) != "#" && page.ElementAt(i).StartsWith("*"))
-                    {
-                        newField = new StringBuilder();
-                        compiledFields.Add(newField.Append(page.ElementAt(i)));
-                        fieldNumber++;
+                        sortedPages.Add(page);
                     }
                 }
-                //  Create New Page and Reset Local Variables
-                compiledPages.Add(compiledFields);
-                compiledFields = new List<StringBuilder>();
-                newField = new StringBuilder();
-                fieldNumber = -1;
+            }
+
+        //=======================================================
+        //  Write
+        //=======================================================
+        public void Write()
+        {
+            foreach (List<StringBuilder> page in compiledPages)
+            {
+                //  Test Page?
+                if (page.ToString().Contains("QUIZ:")) Id_Tests_Prop();
+
+                //  Video Page?
+                else if (page.ToString().Contains("Watch the following")) Id_Video_Prop();
+
+                else
+                {
+                    foreach (var field in page)
+                    {
+                        Id_PageFields_Prop();
+                    }
+                }
             }
         }
 
-        //=========================================
-        //  SubSort: Identify Field Properties
-        //=========================================
+            //  Identify Course Properties
+            public void Id_Courses_Prop()
+            {
+                //  CourseId
 
-        public void IdentifyProperties()
-        {
-            Id_Courses_Prop();
-            Id_Pages_Prop();
-            Id_PageFields_Prop();
-            //Id_Tests_Prop();
-        }
+                //  CourseName
 
-        public void Id_Courses_Prop()
-        {
+                //  CourseDescription
 
-        }
+                //  CourseToComplete
 
-        public void Id_Pages_Prop()
-        {
+                //  ImageUrl
 
-        }
+                //  Core
 
-        public void Id_PageFields_Prop()
-        {
+                //  UniversityOfConcordia
 
-        }
+                //  FreeCourse
 
-        public void Id_Tests_Prop()
-        {
+                //  SandBox
 
-        }
+                //  TechAcademy
 
-        public void Id_TestQuestions_Prop()
-        {
+                //  CoursePosition
 
-        }
+            }
 
-        public void Id_TestAnswers_Prop()
-        {
+            //  Identify Page Properties
+            public void Id_Pages_Prop()
+            {
+                //  PageId
+                //  CourseId
+                //  PageNumber
+                //  IsTest
+            }
 
-        }
+            //  Identify Field Properties
+            public void Id_PageFields_Prop()
+            {
+                //  PageFieldId
+
+                //  PageId
+
+                //  BooleanQuestionId
+
+                //  FieldType
+
+                //  Content
+
+                //  FinalEssay
+
+                //  FieldNumber
+
+                //  FieldTitle
+
+                //  FieldTitle
+
+                //  FieldReference
+
+            }
+
+            //  Identify Test Properties
+            public void Id_Tests_Prop()
+            {
+                Id_TestQuestions_Prop();
+                Id_QuestionChoices_Prop();
+            }
+
+                //  Identify Test Question Properties
+                public void Id_TestQuestions_Prop()
+                {
+                    //  TestQuestionId
+                    //  PageId
+                    //  Question
+                    //  OptionalText
+                    //  QuestionNumber
+                }
+
+                //  Indentify Test Question Choices
+                public void Id_QuestionChoices_Prop()
+                {
+                    //  QuestionChoiceId
+                    //  TestQuestionId
+                    //  BooleanQuestionId
+                    //  Choice
+                    //  CorrectChoice
+                }
+            
+            //  Identify Other Page Types for Custom Population
+            public void Id_Video_Prop()
+            {
+
+            }
+
         //=========================================
         //  Write Pages to DB
         //=========================================
 
 
-
-        public void Write()
-        {
-
-        }
 
         //=========================================
         //  Display Results
@@ -256,46 +358,84 @@ namespace LMS_Population
 
         public void Display()
         {
-            System.Diagnostics.Debug.WriteLine("PAGE COUNT: " + pageCount);
-            System.Diagnostics.Debug.WriteLine("PAGE COUNT2: " + pageCount2);
+            System.Diagnostics.Debug.WriteLine("Compiled PAGE COUNT: " + compiledPages.Count());
+            System.Diagnostics.Debug.WriteLine("List PAGE COUNT2: " + pageCount2);
 
-            //==============================================================
-            //  Print Page A
-            System.Diagnostics.Debug.WriteLine("$$$$$$$$ LOOK AT ME $$$$$$%$%$%$$");
-            int pageA = 578;
-            //  Uncompiled Page A
-            foreach (var line in pageList.ElementAt(pageA))
+            bool printCompare = false;
+            bool printSection = true;
+            bool printCompiled = true;
+
+            //=========================================================
+            //      Compare Single Pages (A and B)
+            //=========================================================
+            if (printCompare)
             {
-                System.Diagnostics.Debug.WriteLine(line);
-            }
-            //  Compiled Page A
-            foreach (var field in compiledPages.ElementAt(pageA))
-            {
-                System.Diagnostics.Debug.WriteLine(field);
-            }
-            // Print Page B
-            System.Diagnostics.Debug.WriteLine("$$$$$$$$ LOOK AT ME AGAIN $$$$$$%$%$%$$");
-            int pageB = 3;
-            // Uncompiled Page B
-            foreach (var line in pageList.ElementAt(pageB))
-            {
-                System.Diagnostics.Debug.WriteLine(line);
-            }
-            //  Compiled Page B
-            foreach (var field in compiledPages.ElementAt(pageB))
-            {
-                System.Diagnostics.Debug.WriteLine(field);
-            }
-            //===========================================================================
-            foreach (var page in compiledPages)
-            {
-                System.Diagnostics.Debug.WriteLine("============================= \n =============================");
-                foreach (var field in page)
+                //  Print Page A
+                System.Diagnostics.Debug.WriteLine("$$$$$$$$  PAGE A  $$$$$$%$%$%$$");
+                int pageA = 786;
+                int pageB = 787;
+
+                //  Uncompiled Page A
+                foreach (var line in pageList.ElementAt(pageA))
+                {
+                    System.Diagnostics.Debug.WriteLine(line);
+                }
+                //  Compiled Page A
+                foreach (var field in compiledPages.ElementAt(pageA))
                 {
                     System.Diagnostics.Debug.WriteLine(field);
                 }
+                // Print Page B
+                System.Diagnostics.Debug.WriteLine("$$$$$$$$  PAGE B  $$$$$$%$%$%$$");
+                // Uncompiled Page B
+                foreach (var line in pageList.ElementAt(pageB))
+                {
+                    System.Diagnostics.Debug.WriteLine(line);
+                }
+                //  Compiled Page B
+                foreach (var field in compiledPages.ElementAt(pageB))
+                {
+                    System.Diagnostics.Debug.WriteLine(field);
+                }
+                System.Diagnostics.Debug.WriteLine("$$$$$$$$$$  END SINGLE PAGE PRINT  $$$$$$$$$$");
             }
-            System.Diagnostics.Debug.WriteLine("$$$$$$$$ END OF DISPLAY() $$$$$$%$%$%$$");
+
+            //=========================================================
+            //      Print Uncompiled Section of Pages (A-B)
+            //=========================================================
+            if (printSection)
+            {
+                int pageA = 783;
+                int pageB = 788;
+                int pageN = pageA;
+            
+                while (pageN <= pageB)
+                {
+                    System.Diagnostics.Debug.WriteLine("===============================");
+                    foreach (var field in compiledPages.ElementAt(pageN))
+                    {
+                        System.Diagnostics.Debug.WriteLine(field);
+                    }
+                    pageN++;
+                }
+                System.Diagnostics.Debug.WriteLine("$$$$$$$$$$  END SECTION PRINT  $$$$$$$$$$");
+            }
+
+            //=========================================================
+            //      Print All Compiled Pages
+            //=========================================================
+            if (printCompiled)
+            {
+                foreach (var page in compiledPages)
+                {
+                    System.Diagnostics.Debug.WriteLine("=============================");
+                    foreach (var field in page)
+                    {
+                        System.Diagnostics.Debug.WriteLine(field);
+                    }
+                }
+                System.Diagnostics.Debug.WriteLine("$$$$$$$$ END OF DISPLAY() $$$$$$%$%$%$$");
+            }
         }
 
         //=============================================================

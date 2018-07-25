@@ -1,11 +1,15 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+@model Parse_Pop_App
+
 
 <div class="jumbotron">
     <h1>The Tech Academy: <br /> LMS Course Population</h1>
     <p class="lead">This application accepts .txt files for generating courses within the LMS.</p>
     <p><a href="http://LearnCodingAnywhere.com" class="btn btn-primary btn-lg">The Tech Academy &raquo;</a></p>
+    <p>QuickRun: <input type="button" name="QuickRun" value="Run 'ParsePop()'" /></p>
+    @Html.ActionLink("Quick Run: 'ParsePop()'", "QuickRun");
 </div>
 
 <div class="row">
