@@ -25,6 +25,7 @@ namespace LMS_Population.Models
         public LMS_PopulationDbContext()
             : base("LMS_PopulationDbContext", throwIfV1Schema: false)
         {
+
         }
 
         

@@ -11,22 +11,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
+using System;
+using System.Data.Entity.Migrations;
+using LMS_Population.Models;
+using LMS_Population.Models.CourseData;
 
 namespace LMS_Population
 {
+    
     public class Parse_Pop_App
     {
         public string Txt_FilePath { get; set; }
-
+        List<string> courseData = new List<string>();
+        LMS_PopulationDbContext db = new LMS_PopulationDbContext();
         //=======================
         //      Main Method
         //=======================
-
+        
         public void PopulateInputTxt()
         {
+            //db.Page.RemoveRange(db.Page);
             Read();
             Sort(linesList);
-            Write();
+            Write(sortedPages, courseData);
 
             Display();
         }
@@ -232,9 +239,12 @@ namespace LMS_Population
         //=======================================================
         //  Write
         //=======================================================
-        public void Write()
+        public void Write(List<List<StringBuilder>> _sortedPages, List<String> _courseData)
         {
-            foreach (List<StringBuilder> page in compiledPages)
+          
+            Id_Courses_Prop(courseData);
+
+            foreach (List<StringBuilder> page in sortedPages)
             {
                 //  Test Page?
                 if (page.ToString().Contains("QUIZ:")) Id_Tests_Prop();
@@ -244,6 +254,7 @@ namespace LMS_Population
 
                 else
                 {
+                    Id_Pages_Prop(page);
                     foreach (var field in page)
                     {
                         Id_PageFields_Prop();
@@ -253,8 +264,9 @@ namespace LMS_Population
         }
 
             //  Identify Course Properties
-            public void Id_Courses_Prop()
+            public void Id_Courses_Prop(List<string> CourseData) 
             {
+            //DATABASE_FIELD = int.TryParse((Page.FirstOrDefault().ToString()), out 0);
                 //  CourseId
 
                 //  CourseName
@@ -280,12 +292,19 @@ namespace LMS_Population
             }
 
             //  Identify Page Properties
-            public void Id_Pages_Prop()
+            public void Id_Pages_Prop(List<StringBuilder> _page)
             {
-                //  PageId
+                Page mypage = new Page();
+
+                //  PageId [key]
                 //  CourseId
+                //      mypage.CourseId = &^&^&^&^&^&^&^&^
                 //  PageNumber
-                //  IsTest
+                mypage.PageNumber = Convert.ToInt32(_page.ElementAt(0).ToString().Substring(13).Trim());
+                // IsTest
+                mypage.IsTest = false;
+                db.Page.Add(mypage);
+                db.SaveChanges();
             }
 
             //  Identify Field Properties
@@ -316,6 +335,7 @@ namespace LMS_Population
             //  Identify Test Properties
             public void Id_Tests_Prop()
             {
+                Id_PageFields_Prop();
                 Id_TestQuestions_Prop();
                 Id_QuestionChoices_Prop();
             }
@@ -341,9 +361,10 @@ namespace LMS_Population
                 }
             
             //  Identify Other Page Types for Custom Population
+            //  Identify Video Properties
             public void Id_Video_Prop()
             {
-
+               
             }
 
         //=========================================
@@ -362,7 +383,7 @@ namespace LMS_Population
             System.Diagnostics.Debug.WriteLine("List PAGE COUNT2: " + pageCount2);
 
             bool printCompare = false;
-            bool printSection = true;
+            bool printSection = false;
             bool printCompiled = true;
 
             //=========================================================
@@ -426,7 +447,7 @@ namespace LMS_Population
             //=========================================================
             if (printCompiled)
             {
-                foreach (var page in compiledPages)
+                foreach (var page in sortedPages)
                 {
                     System.Diagnostics.Debug.WriteLine("=============================");
                     foreach (var field in page)
