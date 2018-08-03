@@ -30,11 +30,9 @@ namespace LMS_Population
         
         public void PopulateInputTxt()
         {
-            //db.Page.RemoveRange(db.Page);
             Read();
             Sort(linesList);
             Write(sortedPages, courseData);
-
             Display();
         }
 
@@ -239,9 +237,32 @@ namespace LMS_Population
         //=======================================================
         //  Write
         //=======================================================
+
+            // ********************************************
+            //**********************************************
+            //             DataBase Table Drop
+                        bool dropDb_Switch = true;
+                        public void DropDb()
+                                {
+                                    db.Course.RemoveRange(db.Course);
+                                    db.Page.RemoveRange(db.Page);
+                                    db.PageField.RemoveRange(db.PageField);
+                                    db.TestAnswer.RemoveRange(db.TestAnswer);
+                                    db.TestQuestion.RemoveRange(db.TestQuestion);
+                                    db.SaveChanges();
+                                }
+            //**********************************************
+            // ********************************************
+        
+        
+
+            // <param name="_sortedPages"></param>
+            // <param name="_courseData"></param>
         public void Write(List<List<StringBuilder>> _sortedPages, List<String> _courseData)
         {
-          
+            //  Drop Database Switch Fnx
+            if (dropDb_Switch) DropDb();
+            //  Populate Course
             Id_Courses_Prop(courseData);
 
             foreach (List<StringBuilder> page in sortedPages)
@@ -251,7 +272,7 @@ namespace LMS_Population
 
                 //  Video Page?
                 else if (page.ToString().Contains("Watch the following")) Id_Video_Prop();
-
+                //  Norm Page?
                 else
                 {
                     Id_Pages_Prop(page);
@@ -268,42 +289,31 @@ namespace LMS_Population
             {
             //DATABASE_FIELD = int.TryParse((Page.FirstOrDefault().ToString()), out 0);
                 //  CourseId
-
                 //  CourseName
-
                 //  CourseDescription
-
                 //  CourseToComplete
-
                 //  ImageUrl
-
                 //  Core
-
                 //  UniversityOfConcordia
-
                 //  FreeCourse
-
                 //  SandBox
-
                 //  TechAcademy
-
                 //  CoursePosition
-
             }
 
             //  Identify Page Properties
             public void Id_Pages_Prop(List<StringBuilder> _page)
             {
-                Page mypage = new Page();
+                Page nPage = new Page();
 
                 //  PageId [key]
                 //  CourseId
                 //      mypage.CourseId = &^&^&^&^&^&^&^&^
                 //  PageNumber
-                mypage.PageNumber = Convert.ToInt32(_page.ElementAt(0).ToString().Substring(13).Trim());
+                nPage.PageNumber = Convert.ToInt32(_page.ElementAt(0).ToString().Substring(13).Trim());
                 // IsTest
-                mypage.IsTest = false;
-                db.Page.Add(mypage);
+                nPage.IsTest = false;
+                db.Page.Add(nPage);
                 db.SaveChanges();
             }
 
@@ -337,7 +347,6 @@ namespace LMS_Population
             {
                 Id_PageFields_Prop();
                 Id_TestQuestions_Prop();
-                Id_QuestionChoices_Prop();
             }
 
                 //  Identify Test Question Properties
