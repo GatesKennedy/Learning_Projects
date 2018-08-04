@@ -263,10 +263,14 @@ namespace LMS_Population
             //  Drop Database Switch Fnx
             if (dropDb_Switch) DropDb();
             //  Populate Course
-            Id_Courses_Prop(courseData);
+            
+            string courseNameInputVal = "Computer_Basics";
+            Id_Courses_Prop(courseData, out string courseIdGenerated, courseNameInputVal);
 
             foreach (List<StringBuilder> page in sortedPages)
             {
+                Id_Pages_Prop(page, courseIdGenerated);
+
                 //  Test Page?
                 if (page.ToString().Contains("QUIZ:")) Id_Tests_Prop();
 
@@ -275,7 +279,6 @@ namespace LMS_Population
                 //  Norm Page?
                 else
                 {
-                    Id_Pages_Prop(page);
                     foreach (var field in page)
                     {
                         Id_PageFields_Prop();
@@ -284,12 +287,17 @@ namespace LMS_Population
             }
         }
 
-            //  Identify Course Properties
-            public void Id_Courses_Prop(List<string> CourseData) 
+        //  Identify Course Properties
+        public void Id_Courses_Prop(List<string> CourseData, out string _courseIdGuid, string _courseName = "no_input_Provided") 
+        {
+            Course nCourse = new Course
             {
-            //DATABASE_FIELD = int.TryParse((Page.FirstOrDefault().ToString()), out 0);
+
                 //  CourseId
+                
+                //  Automatic from Course Object Constructor
                 //  CourseName
+                CourseName = _courseName
                 //  CourseDescription
                 //  CourseToComplete
                 //  ImageUrl
@@ -299,82 +307,97 @@ namespace LMS_Population
                 //  SandBox
                 //  TechAcademy
                 //  CoursePosition
+            };
+
+            //  WRITE
+            db.Course.Add(nCourse);
+            db.SaveChanges();
+
+            _courseIdGuid = nCourse.CourseId;
+        }
+
+        //  Identify Page Properties
+        public void Id_Pages_Prop(List<StringBuilder> _page, string _courseIdInput = "no_input_provided")
+        {
+            Page nPage = new Page
+            {
+                //  PageId [key]
+                    //  Automatic from Page Object Constructor
+                //  CourseId
+                CourseId = _courseIdInput,
+                //  PageNumber
+                PageNumber = Convert.ToInt32(_page.ElementAt(0).ToString().Substring(13).Trim())
+            };
+            // IsTest
+            nPage.IsTest = false;
+            foreach (var field in _page)
+            {
+                if (field.ToString().Contains("QUIZ:")) nPage.IsTest = true;
             }
 
-            //  Identify Page Properties
-            public void Id_Pages_Prop(List<StringBuilder> _page)
-            {
-                Page nPage = new Page();
-
-                //  PageId [key]
-                //  CourseId
-                //      mypage.CourseId = &^&^&^&^&^&^&^&^
-                //  PageNumber
-                nPage.PageNumber = Convert.ToInt32(_page.ElementAt(0).ToString().Substring(13).Trim());
-                // IsTest
-                nPage.IsTest = false;
+            //  WRITE
                 db.Page.Add(nPage);
                 db.SaveChanges();
-            }
+        }
 
-            //  Identify Field Properties
-            public void Id_PageFields_Prop()
+        //  Identify Field Properties
+        public void Id_PageFields_Prop()
+        {
+            //  PageFieldId
+
+            //  PageId
+
+            //  BooleanQuestionId
+
+            //  FieldType
+
+            //  Content
+
+            //  FinalEssay
+
+            //  FieldNumber
+
+            //  FieldTitle
+
+            //  FieldTitle
+
+            //  FieldReference
+
+        }
+
+        //  Identify Test Properties
+        public void Id_Tests_Prop()
+        {
+            Id_PageFields_Prop();
+            Id_TestQuestions_Prop();
+        }
+
+            //  Identify Test Question Properties
+            public void Id_TestQuestions_Prop()
             {
-                //  PageFieldId
-
+                //  TestQuestionId
                 //  PageId
+                //  Question
+                //  OptionalText
+                //  QuestionNumber
+            }
 
+            //  Indentify Test Question Choices
+            public void Id_QuestionChoices_Prop()
+            {
+                //  QuestionChoiceId
+                //  TestQuestionId
                 //  BooleanQuestionId
-
-                //  FieldType
-
-                //  Content
-
-                //  FinalEssay
-
-                //  FieldNumber
-
-                //  FieldTitle
-
-                //  FieldTitle
-
-                //  FieldReference
-
+                //  Choice
+                //  CorrectChoice
             }
-
-            //  Identify Test Properties
-            public void Id_Tests_Prop()
-            {
-                Id_PageFields_Prop();
-                Id_TestQuestions_Prop();
-            }
-
-                //  Identify Test Question Properties
-                public void Id_TestQuestions_Prop()
-                {
-                    //  TestQuestionId
-                    //  PageId
-                    //  Question
-                    //  OptionalText
-                    //  QuestionNumber
-                }
-
-                //  Indentify Test Question Choices
-                public void Id_QuestionChoices_Prop()
-                {
-                    //  QuestionChoiceId
-                    //  TestQuestionId
-                    //  BooleanQuestionId
-                    //  Choice
-                    //  CorrectChoice
-                }
             
-            //  Identify Other Page Types for Custom Population
-            //  Identify Video Properties
-            public void Id_Video_Prop()
-            {
+        //  Identify Other Page Types for Custom Population
+        //  Identify Video Properties
+        public void Id_Video_Prop()
+        {
                
-            }
+        }
 
         //=========================================
         //  Write Pages to DB
