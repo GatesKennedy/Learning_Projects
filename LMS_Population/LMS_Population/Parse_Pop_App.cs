@@ -263,7 +263,6 @@ namespace LMS_Population
             //  Drop Database Switch Fnx
             if (dropDb_Switch) DropDb();
             //  Populate Course
-            
             string courseNameInputVal = "Computer_Basics";
             Id_Courses_Prop(courseData, out string courseIdGenerated, courseNameInputVal);
 
@@ -272,18 +271,14 @@ namespace LMS_Population
                 Id_Pages_Prop(page, out Page _nPage, courseIdGenerated);
 
                 //  Test Page?
-                if (page.ToString().Contains("QUIZ:")) Id_Tests_Prop();
+                if (page.ToString().Contains("QUIZ:")) Id_Tests_Prop(page, _nPage);
 
                 //  Video Page?
-                else if (page.ToString().Contains("Watch the following")) Id_Video_Prop();
+                else if (page.ToString().Contains("Watch the following")) Id_Video_Prop(_nPage);
+
                 //  Norm Page?
-                else
-                {
-                    foreach (var field in page)
-                    {
-                        Id_PageFields_Prop();
-                    }
-                }
+                else Id_PageFields_Prop(page, _nPage);
+
             }
         }
 
@@ -317,7 +312,7 @@ namespace LMS_Population
         }
 
         //  Identify Page Properties
-        public void Id_Pages_Prop(List<StringBuilder> _page, out Page _nPage, string _courseIdInput = "no_input_provided")
+        public void Id_Pages_Prop(List<StringBuilder> _ListPage, out Page _nPage, string _courseIdInput = "no_input_provided")
         {
             Page nPage = new Page
             {
@@ -326,11 +321,11 @@ namespace LMS_Population
                 //  CourseId
                 CourseId = _courseIdInput,
                 //  PageNumber
-                PageNumber = Convert.ToInt32(_page.ElementAt(0).ToString().Substring(13).Trim())
+                PageNumber = Convert.ToInt32(_ListPage.ElementAt(0).ToString().Substring(13).Trim())
             };
             // IsTest
             nPage.IsTest = false;
-            foreach (var field in _page)
+            foreach (var field in _ListPage)
             {
                 if (field.ToString().Contains("QUIZ:")) nPage.IsTest = true;
             }
@@ -344,49 +339,82 @@ namespace LMS_Population
         }
 
         //  Identify Field Properties
-        public void Id_PageFields_Prop(Page _page)
+        public void Id_PageFields_Prop(List<StringBuilder> _PageList, Page _Page)
         {
-            //  PageFieldId
+            int fieldCount = 0;
 
-            //  PageId
+            foreach (StringBuilder field in _PageList)
+            {
+                //  Convert StringBuilder to String
+                string _nField = field.ToString();
+                //  ID Field Type
+                string fieldType;
+                if (_Page.IsTest) fieldType = "Test";
+                else if (_nField.EndsWith(":")) fieldType = "Definition";
+                else if (_nField.StartsWith("1.") && _PageList.ToString().Contains("?")) fieldType = "Question";
+                else fieldType = "Paragraph";
 
-            //  BooleanQuestionId
+                PageField nField = new PageField
+                {
 
-            //  FieldType
+                    //  PageFieldId
+                    //  Automatic from Constructor
+                    //  PageId
+                    PageId = _Page.PageId,
+                    //  BooleanQuestionId
 
-            //  Content
+                    //  FieldType
+                    FieldType = fieldType,
+                    //  Content
+                    Content = _nField,
+                    //  FinalEssay
 
-            //  FinalEssay
+                    //  FieldNumber
+                    FieldNumber = fieldCount
+                    //  FieldTitle
 
-            //  FieldNumber
+                    //  FieldTitle
 
-            //  FieldTitle
+                    //  FieldReference
 
-            //  FieldTitle
+                };
+                fieldCount++;
+            }
+   
 
-            //  FieldReference
 
         }
 
         //  Identify Test Properties
-        public void Id_Tests_Prop(Page _page)
+        public void Id_Tests_Prop(List<StringBuilder> _ListPage, Page _Page)
         {
-            Id_PageFields_Prop(_page);
-            Id_TestQuestions_Prop(_page);
+            Id_TestQuestions_Prop(_ListPage, _Page, out string _PageId);
+            Id_QuestionChoices_Prop(_Page);
         }
 
             //  Identify Test Question Properties
-            public void Id_TestQuestions_Prop(Page _page)
+            public void Id_TestQuestions_Prop(List<StringBuilder> _TestQuestion, Page _Page, out string _PageId)
+            {
+            TestQuestion nPage = new TestQuestion
             {
                 //  TestQuestionId
+                    //  Automatic From Constructor
                 //  PageId
+                PageId = _Page.PageId,
                 //  Question
+                Question = _TestQuestion.ElementAt(1).ToString(),
                 //  OptionalText
+
                 //  QuestionNumber
+
+            };
+      
+
+            _PageId = nPage.PageId;
             }
 
             //  Indentify Test Question Choices
-            public void Id_QuestionChoices_Prop()
+            public void Id_QuestionChoices_Prop(Page _page)
             {
                 //  QuestionChoiceId
                 //  TestQuestionId
@@ -397,7 +425,7 @@ namespace LMS_Population
             
         //  Identify Other Page Types for Custom Population
         //  Identify Video Properties
-        public void Id_Video_Prop()
+        public void Id_Video_Prop(Page _page)
         {
                
         }
