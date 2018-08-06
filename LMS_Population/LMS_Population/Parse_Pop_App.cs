@@ -269,7 +269,7 @@ namespace LMS_Population
 
             foreach (List<StringBuilder> page in sortedPages)
             {
-                Id_Pages_Prop(page, courseIdGenerated);
+                Id_Pages_Prop(page, out Page _nPage, courseIdGenerated);
 
                 //  Test Page?
                 if (page.ToString().Contains("QUIZ:")) Id_Tests_Prop();
@@ -317,7 +317,7 @@ namespace LMS_Population
         }
 
         //  Identify Page Properties
-        public void Id_Pages_Prop(List<StringBuilder> _page, string _courseIdInput = "no_input_provided")
+        public void Id_Pages_Prop(List<StringBuilder> _page, out Page _nPage, string _courseIdInput = "no_input_provided")
         {
             Page nPage = new Page
             {
@@ -338,10 +338,13 @@ namespace LMS_Population
             //  WRITE
                 db.Page.Add(nPage);
                 db.SaveChanges();
+
+            //  Output
+            _nPage = nPage;
         }
 
         //  Identify Field Properties
-        public void Id_PageFields_Prop()
+        public void Id_PageFields_Prop(Page _page)
         {
             //  PageFieldId
 
@@ -366,14 +369,14 @@ namespace LMS_Population
         }
 
         //  Identify Test Properties
-        public void Id_Tests_Prop()
+        public void Id_Tests_Prop(Page _page)
         {
-            Id_PageFields_Prop();
-            Id_TestQuestions_Prop();
+            Id_PageFields_Prop(_page);
+            Id_TestQuestions_Prop(_page);
         }
 
             //  Identify Test Question Properties
-            public void Id_TestQuestions_Prop()
+            public void Id_TestQuestions_Prop(Page _page)
             {
                 //  TestQuestionId
                 //  PageId
