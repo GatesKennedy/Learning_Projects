@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(242, 196, 52);
+}
+
+.main-nav {
+    display: inline-flex;
+    align-items : center;
+}
+
+.nav-link {
+    margin-left: 10px;
+    margin-right: 10px;
+}
