@@ -223,16 +223,16 @@ namespace LMS_Population
             //  SubSort: Clean Up Sort (empty pages, fields, etc..)
             //=======================================================
 
-        public void SortCleanUp()
-            {
-                foreach (var page in compiledPages)
+            public void SortCleanUp()
                 {
-                    if (page.Count > 0)
+                    foreach (var page in compiledPages)
                     {
-                        sortedPages.Add(page);
+                        if (page.Count > 0)
+                        {
+                            sortedPages.Add(page);
+                        }
                     }
                 }
-            }
 
         //=======================================================
         //  Write
@@ -253,11 +253,7 @@ namespace LMS_Population
                                 }
             //**********************************************
             // ********************************************
-        
-        
 
-            // <param name="_sortedPages"></param>
-            // <param name="_courseData"></param>
         public void Write(List<List<StringBuilder>> _sortedPages, List<String> _courseData)
         {
             //  Drop Database Switch Fnx
@@ -395,22 +391,21 @@ namespace LMS_Population
             //  Identify Test Question Properties
             public void Id_TestQuestions_Prop(List<StringBuilder> _TestQuestion, Page _Page, out string _PageId)
             {
-            TestQuestion nPage = new TestQuestion
-            {
-                //  TestQuestionId
-                    //  Automatic From Constructor
-                //  PageId
-                PageId = _Page.PageId,
-                //  Question
-                Question = _TestQuestion.ElementAt(1).ToString(),
-                //  OptionalText
+                TestQuestion nPage = new TestQuestion
+                {
+                    //  TestQuestionId
+                        //  Automatic From Constructor
+                    //  PageId
+                    PageId = _Page.PageId,
+                    //  Question
+                    Question = _TestQuestion.ElementAt(1).ToString(),
+                    //  OptionalText
 
-                //  QuestionNumber
+                    //  QuestionNumber
 
-            };
-      
+                };
 
-            _PageId = nPage.PageId;
+                _PageId = nPage.PageId;
             }
 
             //  Indentify Test Question Choices
