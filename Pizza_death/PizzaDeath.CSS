@@ -99,7 +99,7 @@ h4 {
 	margin:0px;
 }
 
-.list { 
+.list {
 	float:left;
 }
 
@@ -114,7 +114,7 @@ h4 {
 .menu.choices {
 	display: block;
 	width:70%;
-	overflow: scroll;
+	overflow:hidden;
 	padding-left: 2%;
 }
 
@@ -230,13 +230,13 @@ form {
 .topping1 {
 	min-width: 5%;
 	float: left;
-	
+
 }
 
 .topping2 {
 	max-width: 40%;
 	float: left;
-	
+
 }
 
 /*======================FORMS==========================*/
@@ -335,7 +335,7 @@ form {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1; 
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -429,7 +429,7 @@ body, .header, .footer, .order {
 	border: 1px solid white;
 }
 .menuHead, .orderButton, .menu, .top.cont1, .top.cont2,
-.topping1, .topping2, .toppingHead, .toppingFlag {	
+.topping1, .topping2, .toppingHead, .toppingFlag {
 	border: 1px solid red;
 }
 
