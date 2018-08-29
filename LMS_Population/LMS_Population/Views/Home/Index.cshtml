@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model Parse_Pop_App
+
+
+<div class="jumbotron">
+    <h1>The Tech Academy: <br /> LMS Course Population</h1>
+    <p class="lead">This application accepts .txt files for generating courses within the LMS.</p>
+    <p><a href="http://LearnCodingAnywhere.com" class="btn btn-primary btn-lg">The Tech Academy &raquo;</a></p>
+    <p>QuickRun: <input type="button" name="QuickRun" value="Run 'ParsePop()'" /></p>
+    @Html.ActionLink("Quick Run: 'ParsePop()'", "QuickRun");
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            Use the formatting documentation to write successfully populated curriculum from any word processing application, including Google Docs and Microsoft Word.
+        </p>
+        <p><a class="btn btn-default" href="https://wefuckingtried.com">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>The Application</h2>
+        <p>
+            Explore the structure and processes of the application gain insight on it's innerworkings and visualize potential improvements.
+        </p>
+        <p><a class="btn btn-default" href="https://wefuckingtried.com">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Populate a Course</h2>
+        <p>Follow theses instructions to implement the application</p>
+        <p><a class="btn btn-default" href="https://wefuckingtried.com">Learn more &raquo;</a></p>
+    </div>
+</div>
