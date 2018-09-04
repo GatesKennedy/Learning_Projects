@@ -55,3 +55,4 @@ C:\Users\Andobe\Documents\GatesKennedy\HappyBirthdayBridgerBaby\HappyBirthdayBri
 C:\Users\Andobe\Documents\GatesKennedy\HappyBirthdayBridgerBaby\HappyBirthdayBridgerBaby\obj\Release\HappyBirthdayBridgerBaby.csproj.CopyComplete
 C:\Users\Andobe\Documents\GatesKennedy\HappyBirthdayBridgerBaby\HappyBirthdayBridgerBaby\obj\Release\HappyBirthdayBridgerBaby.dll
 C:\Users\Andobe\Documents\GatesKennedy\HappyBirthdayBridgerBaby\HappyBirthdayBridgerBaby\obj\Release\HappyBirthdayBridgerBaby.pdb
+C:\Users\Andobe\Documents\GatesKennedy\HappyBirthdayBridgerBaby\HappyBirthdayBridgerBaby\obj\Release\HappyBirthdayBridgerBaby.csprojAssemblyReference.cache

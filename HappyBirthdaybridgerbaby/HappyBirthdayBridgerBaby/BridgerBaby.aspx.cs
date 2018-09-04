@@ -12,7 +12,6 @@ namespace HappyBirthdayBridgerBaby
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack) {
-                skate = false;
 
             }
             else{
@@ -28,8 +27,6 @@ namespace HappyBirthdayBridgerBaby
          * -<fName> <lName>
          */
 
-        bool skate;
-
         
         private static Random _rando = new Random();
 
@@ -37,12 +34,23 @@ namespace HappyBirthdayBridgerBaby
 
         List<string> traits = new List<string>
         {
-            "the way you get excited about things",
+            "the way you get excited about little things",
             "that smirk you make when landing an 'edgy' joke",
             "the way you run away and circle back laughing at a joke",
             "that you cock the gun overhand when you 'get serious' on buck",
             "how goddamn thoughtful you are of others",
-            "how you listen and learn with genuine interest"
+            "how you listen and learn with genuine interest",
+            "that you're a natural at everything but always want more",
+            "how easily you connect with strangers",
+            "how much you Love (for real)",
+            "your laugh",
+            "that you'll skate with me across town from SWANS to catch Dinosaur Jr.",
+            "that you'll stand your ground and call out shitty behavior",
+            "that you'll talk to my mom on the phone for 30mins, just catching up,",
+            "how supportive you've been",
+            "the way you explain yourself",
+            "that you went through a 'dress phase'",
+            "you're golf swing"
         };
 
         List<string> action1 = new List<string>
@@ -128,7 +136,7 @@ namespace HappyBirthdayBridgerBaby
 
             madValues.Clear();
 
-            int rando1 = _rando.Next(0, 6);
+            int rando1 = _rando.Next(0, 16);
             int rando2 = _rando.Next(0, 6);
             int rando3 = _rando.Next(0, 6);
             int rando4 = _rando.Next(0, 6);
