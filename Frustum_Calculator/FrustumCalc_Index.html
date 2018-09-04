@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang = "en-US">
+
+<!--
+==============================
+		Head Section
+==============================
+-->
+	<head>
+		<meta charset = "UTF-8">
+		<meta name="GatesKennedy" Content="StillWhiteMare">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			GatesKennedy
+		</title>
+	
+		<!--
+		________________________
+		 CSS: Linked StyleSheet 
+		========================						-->
+		<link rel="stylesheet"
+		type="text/CSS" 
+		href="FrustumStyle.CSS"/>					 
+														<!--	CSS: LINKED -->
+	
+		
+
+	</head>
+<!--
+==============================
+		Body Section 
+==============================
+-->
+	<body>
+<!--___NAV___-->
+		<nav>
+			<ul>
+				<li>Home</li>
+				<li>Projects</li>
+				<li>Tools</li>
+			</ul>
+		</nav>
+
+<!--___HEAD___-->
+		<header>
+			<h1>Frustum Calculator</h1>
+			<div id="introduction" class="header">
+				<p>This application will help you create a tapered conical section of any dimension. </br> Specify the desired diameter at each end of the part and the sheet metal patern will be generated for your convenience.</p>
+				<div id="info" class="header">
+					<dl>
+						<dt>Frustum Definition:</dt>
+						<dd>The portion of a cone or pyramid that remains after its upper section has been cut off by a plane parallel to its base, or that is intercepted between two such planes.(Sometimes mispelled "frustrum".)</dd>
+						<dt>Frustum Math:</dt>
+						<dd>[content]</dd>
+					</dl>
+				</div>
+			</div>
+		</header>
+
+<!--___CALC___-->
+		<section id="calculator" class="cont-calc">
+
+	<!--___INPUT___-->
+			<div id="input-cont" class="cont-calc-sub1">
+				<div id="input-cont-id" class="cont-calc-sub2">
+					<div class="cont-calc-sub3">Smaller Diameter:</div>
+					<div class="cont-calc-sub3">Larger Diameter:</div>
+					<div class="cont-calc-sub3">Distance to Span:</div>
+				</div>
+
+				<div id="input-cont-value" class="cont-calc-sub2">
+					<input type="text" class="cont-calc-sub3" id="InputDiameter1">
+					<input type="text" class="cont-calc-sub3" id="InputDiameter2">
+					<input type="text" class="cont-calc-sub3" id="InputLateral">
+				</div>
+
+				<div id="input-cont-inFlag" class="cont-calc-sub2">
+					<div id="InputDiam1Flag" class="cont-inFlag"></div>
+					<div 1d="InputDiam2Flag" class="cont-inFlag"></div>
+					<div id="InputLatFlag" class="cont-inFlag"></div>
+				</div>
+			</div>
+	<!--___OUTPUT___-->
+			<div id="output-cont" class="cont-calc-sub1">
+				<div id="output-cont-id" class="cont-calc-sub2">
+					<div class="cont-calc-sub3">Smaller Radius:</div>
+					<div class="cont-calc-sub3">Larger Radius:</div>
+					<div class="cont-calc-sub3">Arc Angle:</div>
+				</div>
+
+				<div id="output-cont-value" class="cont-calc-sub2">
+					<input type="text" class="cont-calc-sub3" id="OutputRadius1">
+					<input type="text" class="cont-calc-sub3" id="OutputRadius2">
+					<input type="text" class="cont-calc-sub3" id="OutputAngle">
+				</div>
+
+			</div>
+
+		</section>
+<!--___RENDER___-->
+		<section id="render" class="cont-rend">
+			
+		</section>
+		
+	</body>
+
+<!--___FOOTER___-->
+	<footer>
+		GatesKennedy .:. Portland, OR .:. Conor@EscCollective.com
+<!--____________________________
+	JavaScript: Linked Styling
+	============================					
+-->
+		<script src="FrustumCalc.JS"></script>	
+
+	</footer>
+</html>

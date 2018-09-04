@@ -1,0 +1,308 @@
+body {
+    background-color: rgb(242, 196, 52);
+    margin: 0px;
+}
+
+header {
+  display: block;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  padding-top: : 30px;
+  top: -55px;
+  z-index: 1;
+}
+
+#graph-head, #graph-bar, #graph-bar-end {
+  max-width: 1100px
+}
+
+#graph-lineUp, #graph-pueblo {
+  display: block;
+  z-index: -2;
+  width: 81.6%;
+  max-width: 898px;
+  margin-top: 10px;
+}
+
+#graph-bar {
+
+  top: 20px;
+  z-index: 0;
+}
+
+#graph-bar-end {
+margin-bottom: 10px;
+}
+
+#graph-pueblo {
+  height: 80%;
+  width: 80%;
+  margin-top: 280px;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 100px;
+}
+
+.graphic-mobile {
+  display: none;
+}
+
+.main-nav {
+    display: inline-flex;
+    align-items : center;
+}
+
+.nav-link {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+img {
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 330px) {
+
+  .graphic-mobile {
+    display: block;
+  }
+
+  .graphic-compy {
+    display: none;
+  }
+
+  header {
+    display: block;
+    /*position: -webkit-sticky; /* Safari */
+
+    /*position: sticky;
+    */
+    top: -10px;
+    z-index: 1;
+  }
+
+  #graph-lineUp {
+    display: none;
+    width: 100%;
+  }
+
+  #graph-head-mobile {
+    top:-10px;
+    width: 100%;
+  }
+
+  #graph-bar-mobile {
+    margin-top: 1px;
+    margin-bottom: 10px;
+  }
+
+  #graph-lineUp-mobile {
+    width: 100%;
+    max-width: 414px;
+    overflow: hidden;
+  }
+
+  #graph-pueblo {
+    margin-bottom: 260px;
+    position: sticky;
+    top: 100px;
+  }
+}
+
+@media screen and (max-width: 380px) {
+
+  .graphic-mobile {
+    display: block;
+  }
+
+  .graphic-compy {
+    display: none;
+  }
+
+  header {
+    display: block;
+    /*position: -webkit-sticky; /* Safari */
+
+    /*position: sticky;
+    */
+    top: -10px;
+    z-index: 1;
+  }
+
+  #graph-lineUp {
+    display: none;
+    width: 100%;
+  }
+
+  #graph-head-mobile {
+    top:-10px;
+    width: 100%;
+  }
+
+  #graph-bar-mobile {
+    margin-top: 1px;
+    margin-bottom: 10px;
+  }
+
+  #graph-lineUp-mobile {
+    width: 100%;
+    max-width: 414px;
+    overflow: hidden;
+  }
+
+  #graph-pueblo, .a {
+    margin-top: 180px;
+    margin-bottom: 300px;
+    position: sticky;
+    top: 500px;
+
+  }
+}
+
+@media screen and (max-width: 420px) {
+
+  .graphic-mobile {
+    display: block;
+  }
+
+  .graphic-compy {
+    display: none;
+  }
+
+  header {
+    display: block;
+    /*position: -webkit-sticky; /* Safari */
+
+    /*position: sticky;
+    */
+    top: -10px;
+    z-index: 1;
+  }
+
+  #graph-lineUp {
+    display: none;
+    width: 100%;
+  }
+
+  #graph-head-mobile {
+    top:-10px;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  #graph-bar-mobile {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #graph-lineUp-mobile {
+    width: 100%;
+    max-width: 414px;
+    overflow: hidden;
+  }
+
+  #graph-pueblo, .a {
+    margin-top: 170px;
+    margin-bottom: 280px;
+    position: sticky;
+    top: 100px;
+
+  }
+}
+
+@media screen and (max-height: 820px) and (min-height:795px) {
+
+  .graphic-mobile {
+    display: block;
+  }
+
+  .graphic-compy {
+    display: none;
+  }
+
+  header {
+    display: block;
+    /*position: -webkit-sticky; /* Safari */
+
+    /*position: sticky;
+    */
+    top: 0px;
+    z-index: 1;
+  }
+
+  #graph-lineUp {
+    display: none;
+    width: 100%;
+  }
+
+  #graph-head-mobile {
+    top:-10px;
+    width: 100%;
+    margin-top: 70px;
+  }
+
+  #graph-bar-mobile {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  #graph-lineUp-mobile {
+    width: 100%;
+    max-width: 414px;
+    overflow: hidden;
+  }
+
+  #graph-pueblo, .a {
+    margin-top: 190px;
+    margin-bottom: 360px;
+    position: sticky;
+    top: 100px;
+
+  }
+}
+
+
+  /*
+  #graph-header { background-image: url("./assets/designs/mexicadelia_crop_HeaderFull-4web.jpg");}
+  #graph-lineUp { background-image: url("./assets/designs/mexicadelia_crop_BodyFull-4web");}
+  #graph-bar { background-image: url("./assets/designs/mexicadelia_crop_BarDivide-4web.jpg");}
+
+  #graph-header {display: none;}
+  #graph-lineUp {display: none;}
+  #graph-bar {display: none;}
+*/
+
+
+/*
+<header> <div class=”smallHeader”> <img src="img/MB2.png" alt="Mobile Image"/> </div>
+
+<div class=”mediumHeader”> <img src="img/TB2.png" alt="Tablet Image"/> </div>
+
+ <div class=”bigHeader”>
+      <img src="img/B2.png" alt="Desktop Image"/>
+ </div>
+</header>
+
+CSS Styling
+
+Main CSS
+
+.smallHeader { background-image: url (“img/MB2.png”); display: block; }
+.mediumHeader { background-image: url (“img/TB2.png”); display: none; }
+.bigHeader { background-image: url (“img/B2.png”); display: none; } Fluid CSS
+
+@media screen and (min-width: 480px) {
+  .smallHeader { background-image: url (“img/MB2.png”); display: none;}
+  .mediumHeader { background-image: url (“img/TB2.png”); display: block; }
+  .bigHeader { background-image: url (“img/B2.png”); display: none; }
+}
+
+@media screen and (min-width: 700px) {
+  .smallHeader { background-image: url (“img/MB2.png”); display: none;}
+  .mediumHeader { background-image: url (“img/TB2.png”); display: none; }
+  .bigHeader { background-image: url (“img/B2.png”); display: block; }
+
+}
