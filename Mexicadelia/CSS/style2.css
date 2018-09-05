@@ -1,0 +1,133 @@
+body {
+    background-color: rgb(242, 196, 52);
+    margin: 0px;
+}
+/*  HEADER  */
+header {
+  display: block;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  padding-top: 30px;
+  top: -55px;
+  z-index: 1;
+}
+
+#graph-head, #graph-bar, #graph-bar-end {
+  max-width: 1100px
+}
+
+#graph-lineUp, #graph-pueblo {
+  display: block;
+  z-index: -2;
+  width: 81.6%;
+  max-width: 898px;
+  margin-top: 10px;
+}
+
+#graph-bar {
+
+  top: 20px;
+  z-index: 0;
+}
+
+#graph-bar-end {
+margin-bottom: 10px;
+}
+
+/*  NAV     */
+.nav-cntr-main {
+    box-align: center;
+}
+
+.nav-link {
+    display: inline-block;
+}
+
+#graph-pueblo {
+  height: 80%;
+  width: 80%;
+  margin-top: 280px;
+  margin-bottom: 20px;
+  position: sticky;
+  top: 100px;
+}
+
+.graphic-mobile {
+  display: none;
+}
+
+.main-nav {
+    display: inline-flex;
+    align-items : center;
+}
+
+.nav-link {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+img {
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 330px) {
+
+}
+
+@media screen and (max-width: 380px) {
+
+}
+
+@media screen and (max-width: 420px) {
+
+}
+
+@media screen and (max-height: 820px) and (min-height:795px) {
+
+}
+
+
+  /*
+  #graph-header { background-image: url("./assets/designs/mexicadelia_crop_HeaderFull-4web.jpg");}
+  #graph-lineUp { background-image: url("./assets/designs/mexicadelia_crop_BodyFull-4web");}
+  #graph-bar { background-image: url("./assets/designs/mexicadelia_crop_BarDivide-4web.jpg");}
+
+  #graph-header {display: none;}
+  #graph-lineUp {display: none;}
+  #graph-bar {display: none;}
+*/
+
+
+/*
+<header> <div class=”smallHeader”> <img src="img/MB2.png" alt="Mobile Image"/> </div>
+
+<div class=”mediumHeader”> <img src="img/TB2.png" alt="Tablet Image"/> </div>
+
+ <div class=”bigHeader”>
+      <img src="img/B2.png" alt="Desktop Image"/>
+ </div>
+</header>
+
+CSS Styling
+
+Main CSS
+
+.smallHeader { background-image: url (“img/MB2.png”); display: block; }
+.mediumHeader { background-image: url (“img/TB2.png”); display: none; }
+.bigHeader { background-image: url (“img/B2.png”); display: none; } Fluid CSS
+
+@media screen and (min-width: 480px) {
+  .smallHeader { background-image: url (“img/MB2.png”); display: none;}
+  .mediumHeader { background-image: url (“img/TB2.png”); display: block; }
+  .bigHeader { background-image: url (“img/B2.png”); display: none; }
+}
+
+@media screen and (min-width: 700px) {
+  .smallHeader { background-image: url (“img/MB2.png”); display: none;}
+  .mediumHeader { background-image: url (“img/TB2.png”); display: none; }
+  .bigHeader { background-image: url (“img/B2.png”); display: block; }
+
+}

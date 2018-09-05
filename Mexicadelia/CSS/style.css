@@ -7,7 +7,7 @@ header {
   display: block;
   position: -webkit-sticky; /* Safari */
   position: sticky;
-  padding-top: : 30px;
+  padding-top: 30px;
   top: -55px;
   z-index: 1;
 }
