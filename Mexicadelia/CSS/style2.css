@@ -26,6 +26,13 @@ header {
   z-index: 1;
 }
 
+.graph-head {
+  width: auto;
+}
+.graph-compy {
+  width: 100%;
+}
+
 /*  SPAN    */
 .nav-graph-head-span {
   max-height: 30px;
@@ -50,6 +57,51 @@ header {
   display: inline-block;
   margin: auto;
 }
+/*===============
+    BULK    
+===============*/
+
+.main-day {
+
+}
+
+.day-header {
+
+}
+
+.day-body {
+
+}
+
+.day-venue {
+
+}
+
+.day-band {
+display: block;
+align-content: center;
+padding: 10px;
+}
+
+.day-band-title {
+display: inline-flex;
+font-size: 2em;
+padding: 10px;
+}
+
+.day-band-body {
+display: inline-flex;
+max-height: 20vh;
+}
+
+.bandPic {
+
+}
+
+.bandBio {
+width: 50%;
+margin-left: 20px;
+}
 
 /*===============
     FOOTER    
@@ -70,15 +122,8 @@ text-align: center;
 ====================*/
 
 /*  Mobile/Platforms */
-.graphic-mobile {
+.graph-mobile {
   display: none;
-}
-
-img {
-  width: 100%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 @media screen and (max-width: 330px) {
