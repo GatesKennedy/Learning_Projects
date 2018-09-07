@@ -10,7 +10,8 @@
 
 body {
   font-family: avenir;
-  background-color: #3d3d3d;
+  background-image: url("./assets/images/pic-stars.png");
+  background-color: #e3e3e3;
   margin: 0px;
 }
 /*==============
@@ -24,11 +25,11 @@ header {
   padding-top: 0px;
   top: -55px;
   z-index: 1;
+  
 }
 
-.graph-head {
-  width: auto;
-}
+
+
 .graph-compy {
   width: 100%;
 }
@@ -57,62 +58,109 @@ header {
   display: inline-block;
   margin: auto;
 }
-/*===============
-    BULK    
-===============*/
+/*================
+=====  BULK  =====  
+=================*/
 
+
+/*..............
+  DAY / VENUE 
+ ...............*/
 .main-day {
-
+  border: 2px solid #dddddd;
 }
 
+.day-title {
+  padding-left: 0px;
+  border-bottom: 2px solid #222222;
+  width: 120px;
+  margin-left: 20px
+}
 .day-header {
-
+  border: 2px solid #dddddd;
+  font-size: 1.4em;
 }
 
-.day-body {
+.day-date {
+  font-size: 1.1em;
+  padding-left: 10px;
+}
 
+.day-cntr {
+  border: 2px solid #dddddd;
 }
 
 .day-venue {
+  border: 2px solid #dddddd;
+  font-size: 3em;
+}
+/*....................
+   Lineup Container
+.....................*/
+.day-cntr-lineup {
+
+  border: 2px solid #dddddd;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-column-gap: 6px;
+  grid-row-gap:6px;
+  /*background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.8),
+    rgba(97, 97, 97, 0.808));
+    /*
+  background-color: red; /* For browsers that do not support gradients */
+  /*background-image: linear-gradient(to bottom right, red, yellow); /* Standard syntax (must be last) */
 
 }
 
-.day-band {
-display: block;
-align-content: center;
-padding: 10px;
+.lineup-cntr-band {
+  border: 2px solid #dddddd;
+  justify-content: center;
+  padding: 10px;
+
 }
 
-.day-band-title {
-display: inline-flex;
-font-size: 2em;
-padding: 10px;
-}
-
-.day-band-body {
-display: inline-flex;
-max-height: 20vh;
+.band-cntr-face {
+  border: 2px solid #dddddd;
+  display:block;
 }
 
 .bandPic {
-
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
 }
 
+.bandTitle {
+  display: block;
+  font-size: 2em;
+  padding: 10px;
+  text-align: center;
+}
+
+.band-cntr-body {
+  display:none;
+}
+
+
+
 .bandBio {
-width: 50%;
-margin-left: 20px;
+  width: auto;
+  margin-left: 20px;
 }
 
 /*===============
     FOOTER    
 ===============*/
 #footer {
-position: fixed;
-bottom: 0;
-width: 100%;
-background-color: #000000;
-color: #dddddd;
-text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #000000;
+  color: #dddddd;
+  text-align: center;
 }
 
 
