@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoshMVC_Vidly", "MoshMVC_Vidly\MoshMVC_Vidly.csproj", "{0FF8FC10-0BBC-40E9-A9EF-788311C91105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoshMVC_Vidly.Tests", "MoshMVC_Vidly.Tests\MoshMVC_Vidly.Tests.csproj", "{60BC5220-FAA8-4FF9-B526-0EBDB8197A73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FF8FC10-0BBC-40E9-A9EF-788311C91105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF8FC10-0BBC-40E9-A9EF-788311C91105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FF8FC10-0BBC-40E9-A9EF-788311C91105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FF8FC10-0BBC-40E9-A9EF-788311C91105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60BC5220-FAA8-4FF9-B526-0EBDB8197A73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60BC5220-FAA8-4FF9-B526-0EBDB8197A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60BC5220-FAA8-4FF9-B526-0EBDB8197A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60BC5220-FAA8-4FF9-B526-0EBDB8197A73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
